@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+
+# these are the publicly available "complete" sequences
+# https://www.gisaid.org/ has more (1200?), but they require you to sign up
+
 import requests
 import yaml
 

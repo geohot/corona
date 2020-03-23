@@ -12,22 +12,21 @@ from lib import cc, translate
 # copy machine -- https://www.uniprot.org/uniprot/Q0ZJN1
 # zhanglab breaks this down into many more proteins
 
-print(len(cc))
-
 corona = {}
 
 # begin: 266 base pairs "untranslated"
 # https://en.wikipedia.org/wiki/Five_prime_untranslated_region
 
-# 1ab = replicase polyprotein
+# 1ab = replicase polyprotein, https://www.ncbi.nlm.nih.gov/protein/YP_009724389.1?report=graph
+# (same one for SARS v1 https://www.ncbi.nlm.nih.gov/protein/NP_828849.2?report=graph)
 # 1-10 are in orf1a
-#    1 = Host translation inhibitor nsp1
+#    1 = Host translation inhibitor nsp1, leader protein?
 #    2 = ???
 #    3 = Papain-like proteinase
 #        see diff https://www.ncbi.nlm.nih.gov/projects/msaviewer/?rid=7FXGTZFN016&coloring=cons
 #    4 = nsp4B_TM; contains transmembrane domain 2 (TM2); produced by both pp1a and pp1ab
 #    5 = Proteinase 3CL-PRO
-#    6 = ???
+#    6 = putative transmembrane domain
 #    7 = ???
 #    8 = ???
 #    9 = ssRNA-binding protein; produced by both pp1a and pp1ab
@@ -39,7 +38,7 @@ corona = {}
 #   14 = Uridylate-specific endoribonuclease (NendoU), endoRNAse
 #   15 = 2'-O-methyltransferase (2'-O-MT), https://en.wikipedia.org/wiki/MRNA_(nucleoside-2%27-O-)-methyltransferase
 corona['orf1a'] = translate(cc[266-1:13483], True)
-corona['orf1b'] = translate(cc[13468-1:21555], False)
+corona['orf1b'] = translate(cc[13468-1:21555], False).strip("*")  # chop off the stop, note this doesn't have a start
 
 # exploit vector, this attaches to ACE2. also called "surface glycoprotein"
 # https://www.ncbi.nlm.nih.gov/Structure/pdb/6VYB -- open state
