@@ -14,6 +14,8 @@ from lib import cc, translate
 
 print(len(cc))
 
+corona = {}
+
 # begin: 266 base pairs "untranslated"
 # https://en.wikipedia.org/wiki/Five_prime_untranslated_region
 
@@ -36,32 +38,32 @@ print(len(cc))
 #   13 = Guanine-N7 methyltransferase (ExoN) or maybe 3'-to-5' exonuclease
 #   14 = Uridylate-specific endoribonuclease (NendoU), endoRNAse
 #   15 = 2'-O-methyltransferase (2'-O-MT), https://en.wikipedia.org/wiki/MRNA_(nucleoside-2%27-O-)-methyltransferase
-orf1a = translate(cc[266-1:13483], True)
-orf1b = translate(cc[13468-1:21555], False)
+corona['orf1a'] = translate(cc[266-1:13483], True)
+corona['orf1b'] = translate(cc[13468-1:21555], False)
 
 # exploit vector, this attaches to ACE2. also called "surface glycoprotein"
 # https://www.ncbi.nlm.nih.gov/Structure/pdb/6VYB -- open state
 # https://www.ncbi.nlm.nih.gov/Structure/pdb/6VXX -- closed state
 # sort of 3 proteins, S1 S2 S2'
-spike_glycoprotein = translate(cc[21563-1:25384], True)
+corona['spike_glycoprotein'] = translate(cc[21563-1:25384], True)
 
 # Forms homotetrameric potassium sensitive ion channels (viroporin) and may modulate virus release.
-orf3a = translate(cc[25393-1:26220], True)
+corona['orf3a'] = translate(cc[25393-1:26220], True)
 
 # these two things stick out
-envelope_protein = translate(cc[26245-1:26472], True)
-membrane_glycoprotein = translate(cc[26523-1:27191], True)
+corona['envelope_protein'] = translate(cc[26245-1:26472], True)
+corona['membrane_glycoprotein'] = translate(cc[26523-1:27191], True)
 
-orf6 = translate(cc[27202-1:27387], True)
+corona['orf6'] = translate(cc[27202-1:27387], True)
 
-orf7a = translate(cc[27394-1:27759], True)
-orf7b = translate(cc[27756-1:27887], True)
+corona['orf7a'] = translate(cc[27394-1:27759], True)
+corona['orf7b'] = translate(cc[27756-1:27887], True)  # is this one real?
 
-orf8 = translate(cc[27894-1:28259], True)
+corona['orf8'] = translate(cc[27894-1:28259], True)
 
 # https://en.wikipedia.org/wiki/Capsid
 # Packages the positive strand viral genome RNA into a helical ribonucleocapsid
-nucleocapsid_phosphoprotein = translate(cc[28274-1:29533], True)
+corona['nucleocapsid_phosphoprotein'] = translate(cc[28274-1:29533], True)
 
-orf10 = translate(cc[29558-1:29674], True)
+corona['orf10'] = translate(cc[29558-1:29674], True)
 
