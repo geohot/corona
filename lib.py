@@ -21,11 +21,12 @@ Gly / G GGU, GGC, GGA, GGG
 Tyr / Y UAU, UAC
 His / H CAU, CAC
 Val / V GUU, GUC, GUA, GUG
-STOP  UAA, UGA, UAG
+STOP    UAA, UGA, UAG
 """.strip()
 dec = {}
 for t in tt.split("\n"):
-  k,v = t.split("\x09")
+  k = t[:len("Val / V")].strip()
+  v = t[len("Val / V "):]
   if '/' in k:
     k = k.split("/")[-1].strip()
   k = k.replace("STOP", "*")
@@ -33,7 +34,7 @@ for t in tt.split("\n"):
   for vv in v:
     if vv in dec:
       print("dup", vv)
-    dec[vv] = k
+    dec[vv.strip()] = k
 
 def translate(x, protein=False):
   x = x.lower()
