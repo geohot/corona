@@ -1,27 +1,27 @@
-# Asn or Asp / B	AAU, AAC; GAU, GAC
-# Gln or Glu / Z	CAA, CAG; GAA, GAG
-# START	AUG
-tt = """Ala / A	GCU, GCC, GCA, GCG
-Ile / I	AUU, AUC, AUA
-Arg / R	CGU, CGC, CGA, CGG; AGA, AGG
-Leu / L	CUU, CUC, CUA, CUG; UUA, UUG
-Asn / N	AAU, AAC
-Lys / K	AAA, AAG
-Asp / D	GAU, GAC
-Met / M	AUG
-Phe / F	UUU, UUC
-Cys / C	UGU, UGC
-Pro / P	CCU, CCC, CCA, CCG
-Gln / Q	CAA, CAG
-Ser / S	UCU, UCC, UCA, UCG; AGU, AGC
-Glu / E	GAA, GAG
-Thr / T	ACU, ACC, ACA, ACG
-Trp / W	UGG
-Gly / G	GGU, GGC, GGA, GGG
-Tyr / Y	UAU, UAC
-His / H	CAU, CAC
-Val / V	GUU, GUC, GUA, GUG
-STOP	UAA, UGA, UAG
+# Asn or Asp / B  AAU, AAC; GAU, GAC
+# Gln or Glu / Z  CAA, CAG; GAA, GAG
+# START AUG
+tt = """Ala / A GCU, GCC, GCA, GCG
+Ile / I AUU, AUC, AUA
+Arg / R CGU, CGC, CGA, CGG; AGA, AGG
+Leu / L CUU, CUC, CUA, CUG; UUA, UUG
+Asn / N AAU, AAC
+Lys / K AAA, AAG
+Asp / D GAU, GAC
+Met / M AUG
+Phe / F UUU, UUC
+Cys / C UGU, UGC
+Pro / P CCU, CCC, CCA, CCG
+Gln / Q CAA, CAG
+Ser / S UCU, UCC, UCA, UCG; AGU, AGC
+Glu / E GAA, GAG
+Thr / T ACU, ACC, ACA, ACG
+Trp / W UGG
+Gly / G GGU, GGC, GGA, GGG
+Tyr / Y UAU, UAC
+His / H CAU, CAC
+Val / V GUU, GUC, GUA, GUG
+STOP  UAA, UGA, UAG
 """.strip()
 dec = {}
 for t in tt.split("\n"):
@@ -36,15 +36,23 @@ for t in tt.split("\n"):
     dec[vv] = k
 
 def translate(x, protein=False):
-	aa = []
-	for i in range(0, len(x)-2, 3):
-		aa.append(dec[x[i:i+3]])
-	aa = ''.join(aa)
-	if protein:
-		if aa[0] != "M" or aa[-1] != "*":
-			print("BAD PROTEIN")
-			print(aa)
-			return None
-		aa = aa[:-1]
-	return aa
+  x = x.lower()
+  aa = []
+  for i in range(0, len(x)-2, 3):
+    aa.append(dec[x[i:i+3]])
+  aa = ''.join(aa)
+  if protein:
+    if aa[0] != "M" or aa[-1] != "*":
+      print("BAD PROTEIN")
+      print(aa)
+      return None
+    aa = aa[:-1]
+  return aa
+
+import pathlib
+import os
+import json
+with open(os.path.join(pathlib.Path(__file__).parent.absolute(), "data", "allseq.json")) as f:
+  allseq = json.load(f)
+cc = allseq['MN908947']
 
