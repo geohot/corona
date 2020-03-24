@@ -33,12 +33,13 @@ corona = {}
 #    8 = ???
 #    9 = ssRNA-binding protein; produced by both pp1a and pp1ab
 #   10 = nsp10_CysHis; formerly known as growth-factor-like protein (GFL)
-# 11 is mostly and 12-15 in orf1b
-#   11 = https://en.wikipedia.org/wiki/RNA-dependent_RNA_polymerase
-#   12 = Helicase (Hel).
-#   13 = Guanine-N7 methyltransferase (ExoN) or maybe 3'-to-5' exonuclease
-#   14 = Uridylate-specific endoribonuclease (NendoU), endoRNAse
-#   15 = 2'-O-methyltransferase (2'-O-MT), https://en.wikipedia.org/wiki/MRNA_(nucleoside-2%27-O-)-methyltransferase
+#   11 = only 13 aa
+# 12 is mostly and 13-16 in orf1b
+#   12 = https://en.wikipedia.org/wiki/RNA-dependent_RNA_polymerase
+#   13 = Helicase (Hel).
+#   14 = Guanine-N7 methyltransferase (ExoN) or maybe 3'-to-5' exonuclease
+#   15 = Uridylate-specific endoribonuclease (NendoU), endoRNAse
+#   16 = 2'-O-methyltransferase (2'-O-MT), https://en.wikipedia.org/wiki/MRNA_(nucleoside-2%27-O-)-methyltransferase
 corona['orf1a'] = translate(cc[266-1:13483], True)
 corona['orf1b'] = translate(cc[13468-1:21555], False).strip("*")  # chop off the stop, note this doesn't have a start
 
@@ -46,6 +47,7 @@ corona['orf1b'] = translate(cc[13468-1:21555], False).strip("*")  # chop off the
 # https://www.ncbi.nlm.nih.gov/Structure/pdb/6VYB -- open state
 # https://www.ncbi.nlm.nih.gov/Structure/pdb/6VXX -- closed state
 # sort of 3 proteins, S1 S2 S2'
+# 1273 amino acids
 corona['spike_glycoprotein'] = translate(cc[21563-1:25384], True)
 
 # Forms homotetrameric potassium sensitive ion channels (viroporin) and may modulate virus release.
