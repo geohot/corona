@@ -26,7 +26,11 @@ See [`corona.py`](corona.py)
 - Translation = Disassembly, it's a 3 byte wide instruction set with arbitrary "reading frames"
 - Protein ~ Function. polyprotein = Function with multiple pieces
 - Proteins appear to have "basic blocks" = "Secondary Structure"
-- "Tertiary Structure" forms a function, "Quaternary Structure" is like compiled function with inlining
+  - 80% accuracy in prediction: https://en.wikipedia.org/wiki/Protein_structure_prediction#Secondary_structure
+- "Tertiary Structure" forms a function
+  - This seems like the hard one to predict: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205819
+- "Quaternary Structure" is like compiled function with inlining
+  - https://en.wikipedia.org/wiki/Protein%E2%80%93protein_interaction_prediction
 - Gene ~ library (bacteria are static linked, viruses are dynamically linked)
 - Transcription = loading off disk
 
