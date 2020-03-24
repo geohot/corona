@@ -17,6 +17,8 @@ corona = {}
 # begin: 266 base pairs "untranslated"
 # https://en.wikipedia.org/wiki/Five_prime_untranslated_region
 
+# reference genome parsed: https://www.ncbi.nlm.nih.gov/genbank/sars-cov-2-seqs/
+
 # 1ab = replicase polyprotein, https://www.ncbi.nlm.nih.gov/protein/YP_009724389.1?report=graph
 # (same one for SARS v1 https://www.ncbi.nlm.nih.gov/protein/NP_828849.2?report=graph)
 # 1-10 are in orf1a
