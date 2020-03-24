@@ -496,6 +496,6 @@ sars = """
     29641 ctgcctatat ggaagagccc taatgtgtaa aattaatttt agtagtgcta tccccatgtg
     29701 attttaatag cttcttagga gaatgacaaa aaaaaaaaaa aaaaaaaaaa a
 """
-for s in " \n01234567789":
+for s in " \n0123456789":
     sars = sars.replace(s, "")
 
