@@ -17,3 +17,8 @@ See [`corona.py`](corona.py)
 - Good multisequence compare tool
 - Molecular dynamics?
 
+### Homemade Vaccine
+- https://siasky.net/bACLKGmcmX4NCp47WwOOJf0lU666VLeT5HRWpWVtqZPjEA
+- Based on injecting DNA (plasmid) that expresses the spike protein
+
+
