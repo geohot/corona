@@ -26,6 +26,7 @@ corona = {}
 #    2 = ???
 #    3 = Papain-like proteinase
 #        see diff https://www.ncbi.nlm.nih.gov/projects/msaviewer/?rid=7FXGTZFN016&coloring=cons
+#        Ac + ADRP + SUD + PLpro(1541-1855) + TM + Y domain (from SARS)
 #    4 = nsp4B_TM; contains transmembrane domain 2 (TM2); produced by both pp1a and pp1ab
 #    5 = Proteinase 3CL-PRO
 #    6 = putative transmembrane domain
