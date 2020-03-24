@@ -26,7 +26,9 @@ See [`corona.py`](corona.py)
 - Translation = Disassembly, it's a 3 byte wide instruction set with arbitrary "reading frames"
 - Protein ~ Function. polyprotein = Function with multiple pieces
 - Proteins appear to have "basic blocks" = "Secondary Structure"
-- Gene = library (bacteria are static linked, viruses are dynamically linked)
+- "Tertiary Structure" forms a function, "Quaternary Structure" is like compiled function with inlining
+- Gene ~ library (bacteria are static linked, viruses are dynamically linked)
+- Transcription = loading off disk
 
 ### Analysis
 - There is no equivalent to execution, we are reverse engineering a CAD format
