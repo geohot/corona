@@ -24,11 +24,11 @@ corona = {}
 # 1-10 are in orf1a
 #    1 = Host translation inhibitor nsp1, leader protein?
 #    2 = ???
-#    3 = Papain-like proteinase
+#    3 = Papain-like proteinase (includes PLpro)
 #        see diff https://www.ncbi.nlm.nih.gov/projects/msaviewer/?rid=7FXGTZFN016&coloring=cons
 #        Ac + ADRP + SUD + PLpro(1541-1855) + TM + Y domain (from SARS)
 #    4 = nsp4B_TM; contains transmembrane domain 2 (TM2); produced by both pp1a and pp1ab
-#    5 = Proteinase 3CL-PRO
+#    5 = 3CLpro, Proteinase 3CL-PRO
 #    6 = putative transmembrane domain
 #    7 = ???
 #    8 = ???
@@ -40,7 +40,9 @@ corona = {}
 #   13 = Helicase (Hel).
 #   14 = Guanine-N7 methyltransferase (ExoN) or maybe 3'-to-5' exonuclease
 #   15 = Uridylate-specific endoribonuclease (NendoU), endoRNAse
-#   16 = 2'-O-methyltransferase (2'-O-MT), https://en.wikipedia.org/wiki/MRNA_(nucleoside-2%27-O-)-methyltransferase
+#   16 = 2'-O-methyltransferase (2'-O-MT)
+#        https://en.wikipedia.org/wiki/MRNA_(nucleoside-2%27-O-)-methyltransferase
+
 corona['orf1a'] = translate(cc[266-1:13483], True)
 corona['orf1b'] = translate(cc[13468-1:21555], False).strip("*")  # chop off the stop, note this doesn't have a start
 

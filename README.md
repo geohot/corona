@@ -11,11 +11,15 @@ See [`corona.py`](corona.py)
 - Find the "furin cleavage site" in the "spike glycoprotein"
   - It might be at the "PRRA" -- https://www.sciencedirect.com/science/article/pii/S0166354220300528
   - Use ProP or PiTou to predict? -- https://en.wikipedia.org/wiki/Furin
+- How similar are the other coronaviruses? (causes colds, not either SARS or MERS)
+  - https://en.wikipedia.org/wiki/Human_coronavirus_229E
+  - https://en.wikipedia.org/wiki/Human_coronavirus_OC43
 
 ### Work to be done
 - Automatic extraction of genes from different coronaviruses
 - Good multisequence compare tool
 - Molecular dynamics?
+- Secondary Structure prediction on orf1a?
 
 ### Homemade Vaccine
 - https://siasky.net/bACLKGmcmX4NCp47WwOOJf0lU666VLeT5HRWpWVtqZPjEA
@@ -40,4 +44,21 @@ See [`corona.py`](corona.py)
 - Simulation doesn't seem to work yet
 - Tons of in system dynamic analysis, but the tools are crap
 - Runs more like FPGA code, all at once, no serial execution (what are the FPGA re tools?)
+
+### Tests
+- USA -- https://www.fda.gov/media/134922/download
+  - selected from regions of the virus nucleocapsid (N) gene
+- South Korea -- http://www.kogene.co.kr/eng/about_us/news/listbody.php?h_gcode=board&h_code=7&po_no=288
+  - E gene detection (same for all coronavirus)
+  - specific RdRp detection
+
+
+### Treatments 
+- Hydroxychloroquine + Zinc
+  - Zinc blocks RdRp
+    - https://jvi.asm.org/content/91/21/e00754-17 -- how similar is Hep E RdRp?
+    - https://www.ncbi.nlm.nih.gov/pubmed/21079686
+  - Chloroquine Is a Zinc Ionophore (allows zinc into the cell)
+    - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4182877/
+- Remdesivir (RdRp inhibitor)
 
