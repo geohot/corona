@@ -50,6 +50,19 @@ def translate(x, protein=False):
     aa = aa[:-1]
   return aa
 
+def invert(dd):
+  dd = dd.upper()
+  def _invert(x):
+    if x == 'A':
+      return 'T'
+    elif x == 'T':
+      return 'A'
+    elif x == 'C':
+      return 'G'
+    elif x == 'G':
+      return 'C'
+  return (''.join([_invert(x) for x in dd]))[::-1]
+
 import pathlib
 import os
 import json

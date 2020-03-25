@@ -48,13 +48,27 @@ See [`corona.py`](corona.py)
 ### Tests (how they work)
 - All based on https://en.wikipedia.org/wiki/Reverse_transcription_polymerase_chain_reaction
 - USA -- https://www.fda.gov/media/134922/download
-  - selected from regions of the virus nucleocapsid (N) gene, 28286 and 29163
-  - https://www.biosearchtech.com/products/pcr-kits-and-reagents/pathogen-detection/2019-ncov-cdc-probe-and-primer-kit-for-sars-cov-2
+  - selected from regions of the virus nucleocapsid (N) gene
+  - 28286---28308--28332---28358
+  - 29163---29187--29210---29230
   - https://biosearchtech.a.bigcontent.io/v1/static/coa_KIT-NCOV-PP1-1000_Lot-No-143503
 - South Korea -- http://www.kogene.co.kr/eng/about_us/news/listbody.php?h_gcode=board&h_code=7&po_no=288
   - E gene detection (same for all coronavirus)
   - specific RdRp detection
 
+### Homemade test?
+- Isolation of viral RNA (no matter what)
+  - https://www.qiagen.com/us/products/diagnostics-and-clinical-research/sample-processing/qiaamp-viral-rna-mini-kit/#orderinginformation
+- Primers and probes (to detect SARS-CoV-2)
+  - https://www.biosearchtech.com/products/pcr-kits-and-reagents/pathogen-detection/2019-ncov-cdc-probe-and-primer-kit-for-sars-cov-2
+  - Wouldn't need if using a nanopore sequencer (nanopore MinION)
+- RT-qPCR Master Mix (to PCR)
+  - https://www.thermofisher.com/order/catalog/product/A15300#/A15300
+  - Probably wouldn't need if using a nanopore sequencer
+- All in one?
+  - https://www.chaibio.com/coronavirus
+  - Open qPCR, understand https://www.chaibio.com/openqpcr
+  - FAM and HEX fluorophores?
 
 ### Treatments 
 - Hydroxychloroquine + Zinc
