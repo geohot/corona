@@ -8,12 +8,16 @@ See [`corona.py`](corona.py)
   - nsp3 and nsp5 do it -- https://www.pnas.org/content/pnas/103/15/5717.full.pdf
 - Which protein is the immune system responding to?
   - "spike" and "nucleocapsid" -- http://www.cmi.ustc.edu.cn/1/3/193.pdf
+  - Are some people already immune from exposure to other coronavirus?
 - Find the "furin cleavage site" in the "spike glycoprotein"
   - It might be at the "PRRA" -- https://www.sciencedirect.com/science/article/pii/S0166354220300528
   - Use ProP or PiTou to predict? -- https://en.wikipedia.org/wiki/Furin
 - How similar are the other coronaviruses? (causes colds, not either SARS or MERS)
-  - https://en.wikipedia.org/wiki/Human_coronavirus_229E
+  - https://en.wikipedia.org/wiki/Human_coronavirus_229E (simpler, though targets APN)
   - https://en.wikipedia.org/wiki/Human_coronavirus_OC43
+    - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2095096/pdf/JIDMM17330.pdf
+    - Specifically, how similar is the N protein OC43, SARS v1, and SARS v2?
+- What adds the phosphate group to the N protein? Kinase?
 
 ### Work to be done
 - Automatic extraction of genes from different coronaviruses

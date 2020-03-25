@@ -51,6 +51,7 @@ corona['orf1b'] = translate(cc[13468-1:21555], False).strip("*")  # chop off the
 # https://www.ncbi.nlm.nih.gov/Structure/pdb/6VXX -- closed state
 # sort of 3 proteins, S1 S2 S2'
 # 1273 amino acids
+# https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2750777/
 corona['spike_glycoprotein'] = translate(cc[21563-1:25384], True)
 
 # Forms homotetrameric potassium sensitive ion channels (viroporin) and may modulate virus release.
@@ -69,6 +70,8 @@ corona['orf8'] = translate(cc[27894-1:28259], True)
 
 # https://en.wikipedia.org/wiki/Capsid
 # Packages the positive strand viral genome RNA into a helical ribonucleocapsid
+# Includes the "internal" protein (from Coronavirus Pathogenesis)
+# https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/human-coronavirus-oc43
 corona['nucleocapsid_phosphoprotein'] = translate(cc[28274-1:29533], True)
 
 corona['orf10'] = translate(cc[29558-1:29674], True)
