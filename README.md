@@ -83,3 +83,6 @@ See [`corona.py`](corona.py)
     - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4182877/
 - Remdesivir (RdRp inhibitor)
 
+### Resources
+- Chapter 4 - Coronavirus Pathogenesis -- https://www.sciencedirect.com/science/article/pii/B9780123858856000092
+
