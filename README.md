@@ -45,9 +45,12 @@ See [`corona.py`](corona.py)
 - Tons of in system dynamic analysis, but the tools are crap
 - Runs more like FPGA code, all at once, no serial execution (what are the FPGA re tools?)
 
-### Tests
+### Tests (how they work)
+- All based on https://en.wikipedia.org/wiki/Reverse_transcription_polymerase_chain_reaction
 - USA -- https://www.fda.gov/media/134922/download
-  - selected from regions of the virus nucleocapsid (N) gene
+  - selected from regions of the virus nucleocapsid (N) gene, 28286 and 29163
+  - https://www.biosearchtech.com/products/pcr-kits-and-reagents/pathogen-detection/2019-ncov-cdc-probe-and-primer-kit-for-sars-cov-2
+  - https://biosearchtech.a.bigcontent.io/v1/static/coa_KIT-NCOV-PP1-1000_Lot-No-143503
 - South Korea -- http://www.kogene.co.kr/eng/about_us/news/listbody.php?h_gcode=board&h_code=7&po_no=288
   - E gene detection (same for all coronavirus)
   - specific RdRp detection
