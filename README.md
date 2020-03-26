@@ -16,11 +16,16 @@ See [`corona.py`](corona.py)
   - alpha
     - https://en.wikipedia.org/wiki/Human_coronavirus_229E (simpler, though targets APN)
     - https://en.wikipedia.org/wiki/Human_coronavirus_NL63 (targets ACE2!)
+      - https://www.ncbi.nlm.nih.gov/nuccore/MG772808
   - beta
     - https://en.wikipedia.org/wiki/Human_coronavirus_OC43 (targets Neu5Ac)
       - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2095096/pdf/JIDMM17330.pdf
       - Specifically, how similar is the N protein OC43, SARS v1, and SARS v2?
     - https://en.wikipedia.org/wiki/Human_coronavirus_HKU1 (targets Neu5Ac)
+    - MERS-CoV
+    - SARS-CoV
+  - novel? https://www.cdc.gov/coronavirus/types.html
+    - SARS-CoV-2
 - What adds the phosphate group to the N protein? Kinase?
 
 ### Work to be done
