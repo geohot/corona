@@ -44,6 +44,11 @@ corona = {}
 #        https://en.wikipedia.org/wiki/MRNA_(nucleoside-2%27-O-)-methyltransferase
 
 corona['orf1a'] = translate(cc[266-1:13483], True)
+
+# cc[266-1+4398*3:13468] = 'TTT_TTA_AAC' aka 'X_XXY_YYZ'
+# https://en.wikipedia.org/wiki/Ribosomal_frameshift
+# Programmed −1 Ribosomal Frameshifting
+# TODO: add this to the translator with automatic detection
 corona['orf1b'] = translate(cc[13468-1:21555], False).strip("*")  # chop off the stop, note this doesn't have a start
 
 # exploit vector, this attaches to ACE2. also called "surface glycoprotein"

@@ -84,5 +84,12 @@ See [`corona.py`](corona.py)
 - Remdesivir (RdRp inhibitor)
 
 ### Resources
-- Chapter 4 - Coronavirus Pathogenesis -- https://www.sciencedirect.com/science/article/pii/B9780123858856000092
+- corona
+  - Chapter 4 - Coronavirus Pathogenesis -- https://www.sciencedirect.com/science/article/pii/B9780123858856000092
+  - https://www.futuremedicine.com/doi/pdf/10.2217/fvl-2018-0008
+- textbooks
+  - Molecular Biology of the Cell
+- classes 
+  - better tests - https://ocw.mit.edu/courses/biology/7-012-introduction-to-biology-fall-2004/index.htm
+  - suspected better lectures - https://ocw.mit.edu/courses/biology/7-014-introductory-biology-spring-2005/index.htm
 
