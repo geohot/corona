@@ -30,8 +30,8 @@ corona = {}
 #    4 = nsp4B_TM; contains transmembrane domain 2 (TM2); produced by both pp1a and pp1ab
 #    5 = 3CLpro, Proteinase 3CL-PRO
 #    6 = putative transmembrane domain
-#    7 = ???
-#    8 = ???
+#    7 = hexadecamer with nsp8
+#    8 = primase, makes primers for RdRp
 #    9 = ssRNA-binding protein; produced by both pp1a and pp1ab
 #   10 = nsp10_CysHis; formerly known as growth-factor-like protein (GFL)
 #   11 = only 13 aa
@@ -42,6 +42,9 @@ corona = {}
 #   15 = Uridylate-specific endoribonuclease (NendoU), endoRNAse
 #   16 = 2'-O-methyltransferase (2'-O-MT)
 #        https://en.wikipedia.org/wiki/MRNA_(nucleoside-2%27-O-)-methyltransferase
+
+# in front "the untranslated leader sequence that ends with the Transcription Regulation Sequence"
+corona['untranslated_region'] = cc[0:265]
 
 corona['orf1a'] = translate(cc[266-1:13483], True)
 
@@ -62,8 +65,8 @@ corona['spike_glycoprotein'] = translate(cc[21563-1:25384], True)
 # Forms homotetrameric potassium sensitive ion channels (viroporin) and may modulate virus release.
 corona['orf3a'] = translate(cc[25393-1:26220], True)
 
-# these two things stick out
-corona['envelope_protein'] = translate(cc[26245-1:26472], True)
+# these two things stick out, used in assembly aka they package the virus
+corona['envelope_protein'] = translate(cc[26245-1:26472], True)  # also known as small membrane
 corona['membrane_glycoprotein'] = translate(cc[26523-1:27191], True)
 
 corona['orf6'] = translate(cc[27202-1:27387], True)
@@ -79,5 +82,6 @@ corona['orf8'] = translate(cc[27894-1:28259], True)
 # https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/human-coronavirus-oc43
 corona['nucleocapsid_phosphoprotein'] = translate(cc[28274-1:29533], True)
 
+# might be called the internal protein (Coronavirus Pathogenesis)
 corona['orf10'] = translate(cc[29558-1:29674], True)
 

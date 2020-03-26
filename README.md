@@ -13,10 +13,14 @@ See [`corona.py`](corona.py)
   - It might be at the "PRRA" -- https://www.sciencedirect.com/science/article/pii/S0166354220300528
   - Use ProP or PiTou to predict? -- https://en.wikipedia.org/wiki/Furin
 - How similar are the other coronaviruses? (causes colds, not either SARS or MERS)
-  - https://en.wikipedia.org/wiki/Human_coronavirus_229E (simpler, though targets APN)
-  - https://en.wikipedia.org/wiki/Human_coronavirus_OC43
-    - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2095096/pdf/JIDMM17330.pdf
-    - Specifically, how similar is the N protein OC43, SARS v1, and SARS v2?
+  - alpha
+    - https://en.wikipedia.org/wiki/Human_coronavirus_229E (simpler, though targets APN)
+    - https://en.wikipedia.org/wiki/Human_coronavirus_NL63 (targets ACE2!)
+  - beta
+    - https://en.wikipedia.org/wiki/Human_coronavirus_OC43 (targets Neu5Ac)
+      - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2095096/pdf/JIDMM17330.pdf
+      - Specifically, how similar is the N protein OC43, SARS v1, and SARS v2?
+    - https://en.wikipedia.org/wiki/Human_coronavirus_HKU1 (targets Neu5Ac)
 - What adds the phosphate group to the N protein? Kinase?
 
 ### Work to be done
@@ -81,7 +85,11 @@ See [`corona.py`](corona.py)
     - https://www.ncbi.nlm.nih.gov/pubmed/21079686
   - Chloroquine Is a Zinc Ionophore (allows zinc into the cell)
     - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4182877/
-- Remdesivir (RdRp inhibitor)
+- Novel RdRp inhibitors
+  - Favipiravir (prodrug for favipiravir-RTP)
+- Adenosine Analog
+  - Remdesivir (prodrug for GS-441524)
+  - Galidesivir
 
 ### Resources
 - corona
