@@ -24,7 +24,6 @@ See [`corona.py`](corona.py)
     - https://en.wikipedia.org/wiki/Human_coronavirus_HKU1 (targets Neu5Ac)
     - MERS-CoV
     - SARS-CoV
-  - novel? https://www.cdc.gov/coronavirus/types.html
     - SARS-CoV-2
 - What adds the phosphate group to the N protein? Kinase?
 
