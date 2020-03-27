@@ -57,8 +57,10 @@ corona['orf1b'] = translate(cc[13468-1:21555], False).strip("*")  # chop off the
 # exploit vector, this attaches to ACE2. also called "surface glycoprotein"
 # https://www.ncbi.nlm.nih.gov/Structure/pdb/6VYB -- open state
 # https://www.ncbi.nlm.nih.gov/Structure/pdb/6VXX -- closed state
-# sort of 3 proteins, S1 S2 S2'
 # 1273 amino acids
+#   S1  = 4-685
+#   S2  = 686-1273
+#   S2' = 816-1273
 # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2750777/
 corona['spike_glycoprotein'] = translate(cc[21563-1:25384], True)
 
