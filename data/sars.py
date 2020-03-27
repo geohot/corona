@@ -498,4 +498,5 @@ sars = """
 """
 for s in " \n0123456789":
     sars = sars.replace(s, "")
+sars = sars.upper()
 
