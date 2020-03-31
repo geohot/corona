@@ -58,7 +58,7 @@ corona['orf1b'] = translate(cc[13468-1:21555], False).strip("*")  # chop off the
 # https://www.ncbi.nlm.nih.gov/Structure/pdb/6VYB -- open state
 # https://www.ncbi.nlm.nih.gov/Structure/pdb/6VXX -- closed state
 # 1273 amino acids
-#   S1  = 4-685
+#   S1  = 14-685
 #   S2  = 686-1273
 #   S2' = 816-1273
 # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2750777/
