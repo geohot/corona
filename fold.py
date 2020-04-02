@@ -5,8 +5,10 @@ from simtk.unit import *
 from sys import stdout
 import os
 
-#platform = Platform.getPlatformByName("CUDA")
-platform = Platform.getPlatformByName("OpenCL")
+try:
+  platform = Platform.getPlatformByName("CUDA")
+except Exception:
+  platform = Platform.getPlatformByName("OpenCL")
 
 protein_pdb = "proteins/villin/1vii.pdb"
 pdb = PDBFile(protein_pdb)
