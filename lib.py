@@ -87,7 +87,7 @@ def write_unfolded(fasta, fn):
       atom_num += 1
     res_num += 1
 
-  with open("/tmp/unfolded.pdb", "w") as f:
+  with open(fn, "w") as f:
     f.write('\n'.join(ss))
   
 def invert(dd):
