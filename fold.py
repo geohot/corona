@@ -10,11 +10,22 @@ try:
 except Exception:
   platform = Platform.getPlatformByName("OpenCL")
 
-protein_pdb = "proteins/villin/1vii.pdb"
-pdb = PDBFile(protein_pdb)
+# already folded protein
+#protein_pdb = "proteins/villin/1vii.pdb"
+#pdb = PDBFile(protein_pdb)
+
+# unfolded protein
+protein_fasta = "proteins/villin/1vii.fasta"
+fasta = open(protein_fasta).read().split("\n")[1]
+print("folding %s" % fasta)
+from lib import write_unfolded
+write_unfolded(fasta, "/tmp/unfolded.pdb")
+pdb = PDBFile("/tmp/unfolded.pdb")
+
 forcefield = ForceField('amber99sb.xml', 'tip3p.xml')
 
 modeller = Modeller(pdb.topology, pdb.positions)
+modeller.addHydrogens(forcefield)
 print(modeller.topology)
 
 system = forcefield.createSystem(modeller.topology, nonbondedMethod=NoCutoff, nonbondedCutoff=1*nanometer, constraints=HBonds)
@@ -22,7 +33,11 @@ integrator = LangevinIntegrator(300*kelvin, 1/picosecond, 0.002*picoseconds)
 simulation = Simulation(modeller.topology, system, integrator, platform)
 simulation.context.setPositions(modeller.positions)
 simulation.minimizeEnergy()
-simulation.reporters.append(PDBReporter('/tmp/output.pdb', 25))
-simulation.reporters.append(StateDataReporter(stdout, 100, step=True, potentialEnergy=True, temperature=True))
-simulation.step(5000)
+
+steps = 100000
+# 2500000000
+
+simulation.reporters.append(PDBReporter('/tmp/output.pdb', steps//1000))
+simulation.reporters.append(StateDataReporter(stdout, steps//1000, step=True, potentialEnergy=True, temperature=True))
+simulation.step(steps)
 
