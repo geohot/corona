@@ -1,3 +1,5 @@
+import random
+
 # Asn or Asp / B  AAU, AAC; GAU, GAC
 # Gln or Glu / Z  CAA, CAG; GAA, GAG
 # START AUG
@@ -50,6 +52,44 @@ def translate(x, protein=False):
     aa = aa[:-1]
   return aa
 
+ltl = 'Asp D Glu E Arg R Lys K His H Asn N Gln Q Ser S Thr T Tyr Y Ala A Gly G Val V Leu L Ile I Pro P Phe F Met M Trp W Cys C'
+ltl = ltl.split(" ")
+ltl = dict(zip(ltl[1::2], ltl[0::2]))
+
+def get_atoms():
+  from data import get_amber99sb
+  amber99sb = get_amber99sb()
+  residues = amber99sb.getElementsByTagName("Residue")
+  atoms = {}
+  for r in residues:
+    name = r.attributes['name'].value
+    atoms[name] = [x.attributes['name'].value for x in r.getElementsByTagName("Atom")]
+  return atoms
+
+def write_unfolded(fasta, fn):
+  atoms = get_atoms()
+  atom_num = 1
+  res_num = 1
+  ss = []
+  random.seed(1337)
+  for i, aa in enumerate(fasta):
+    tl = ltl[aa].upper()
+    for a in atoms[tl] + ([] if i != len(fasta)-1 else ["OXT"]):
+      if len(a) < 4:
+        pa = " " + a
+      else:
+        pa = a
+      gr = lambda: 10*(random.random()-0.5)
+      x,y,z = gr(), gr(), gr()
+      s = "ATOM %6d %-4s %3s A %3d    %8.3f%8.3f%8.3f  1.00  1.00           %s" % \
+        (atom_num, pa, tl, res_num, x, y, z, a[0:1])
+      ss.append(s)
+      atom_num += 1
+    res_num += 1
+
+  with open("/tmp/unfolded.pdb", "w") as f:
+    f.write('\n'.join(ss))
+  
 def invert(dd):
   dd = dd.upper()
   def _invert(x):
