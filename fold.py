@@ -2,7 +2,7 @@
 from simtk.openmm.app import *
 from simtk.openmm import *
 from simtk.unit import *
-from sys import stdout
+from sys import stdout, argv
 import os
 
 try:
@@ -34,8 +34,10 @@ simulation = Simulation(modeller.topology, system, integrator, platform)
 simulation.context.setPositions(modeller.positions)
 simulation.minimizeEnergy()
 
-steps = 100000
-# 2500000000
+if len(argv) > 1:
+  steps = int(argv[1])
+else:
+  steps = 100000 #default steps
 
 simulation.reporters.append(PDBReporter('/tmp/output.pdb', steps//1000))
 simulation.reporters.append(StateDataReporter(stdout, steps//1000, step=True, potentialEnergy=True, temperature=True))
