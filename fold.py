@@ -34,10 +34,15 @@ simulation = Simulation(modeller.topology, system, integrator, platform)
 simulation.context.setPositions(modeller.positions)
 simulation.minimizeEnergy()
 
-steps = 100000
+#steps = 100000
 # 2500000000
 
-simulation.reporters.append(PDBReporter('/tmp/output.pdb', steps//1000))
-simulation.reporters.append(StateDataReporter(stdout, steps//1000, step=True, potentialEnergy=True, temperature=True))
+# still off by factor of 100!
+steps = 25000000
+
+steps_write = steps//1000
+print("writing every %d steps" % steps_write)
+simulation.reporters.append(PDBReporter('/tmp/output.pdb', steps_write))
+simulation.reporters.append(StateDataReporter(stdout, steps_write, step=True, potentialEnergy=True, temperature=True))
 simulation.step(steps)
 
