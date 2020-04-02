@@ -100,6 +100,7 @@ See [`corona.py`](corona.py)
   - Chapter 4 - Coronavirus Pathogenesis -- https://www.sciencedirect.com/science/article/pii/B9780123858856000092
   - https://www.futuremedicine.com/doi/pdf/10.2217/fvl-2018-0008
   - https://www.sciencedirect.com/science/article/pii/S2095177920302045
+  - http://korkinlab.org/wuhan
 - textbooks
   - Molecular Biology of the Cell
 - classes 
