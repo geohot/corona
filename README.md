@@ -106,4 +106,5 @@ See [`corona.py`](corona.py)
 - classes 
   - better tests - https://ocw.mit.edu/courses/biology/7-012-introduction-to-biology-fall-2004/index.htm
   - suspected better lectures - https://ocw.mit.edu/courses/biology/7-014-introductory-biology-spring-2005/index.htm
+- Analysis of H1N1 - https://www.bunniestudios.com/blog/?p=353
 
