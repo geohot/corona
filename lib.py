@@ -79,8 +79,9 @@ def write_unfolded(fasta, fn):
         pa = " " + a
       else:
         pa = a
-      gr = lambda: 10*(random.random()-0.5)
+      gr = lambda: 1.0*(random.random()-0.5)
       x,y,z = gr(), gr(), gr()
+      x += res_num*5
       s = "ATOM %6d %-4s %3s A %3d    %8.3f%8.3f%8.3f  1.00  1.00           %s" % \
         (atom_num, pa, tl, res_num, x, y, z, a[0:1])
       ss.append(s)
