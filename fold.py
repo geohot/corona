@@ -45,7 +45,7 @@ modeller.addHydrogens(forcefield)
 print(modeller.topology)
 
 system = forcefield.createSystem(modeller.topology, nonbondedMethod=NoCutoff, nonbondedCutoff=1*nanometer, constraints=HBonds)
-integrator = LangevinIntegrator(args.temp*kelvin, 1/picosecond, 0.002*picoseconds)
+integrator = LangevinIntegrator(args.temp*kelvin, 1/picosecond, 2*femtoseconds)
 simulation = Simulation(modeller.topology, system, integrator, platform)
 simulation.context.setPositions(modeller.positions)
 simulation.minimizeEnergy()
