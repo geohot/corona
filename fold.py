@@ -9,9 +9,11 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Fold some proteins.')
 parser.add_argument('--scratch', action='store_true')
+parser.add_argument('--temp', type=int, default=300)
 parser.add_argument('--steps', type=int, default=100000, help="2500000000 should fold the protein")
 parser.add_argument('--writes', type=int, default=1000, help="default is 1000")
 parser.add_argument('--out', type=str, default="/tmp/output.pdb")
+parser.add_argument('--pdb', type=str, default="proteins/villin/1vii.pdb")
 parser.add_argument('--fasta', type=str, default=None)
 args = parser.parse_args(sys.argv[1:])
 
@@ -33,8 +35,7 @@ if args.scratch:
   pdb = PDBFile("/tmp/unfolded.pdb")
 else:
   # already folded protein
-  protein_pdb = "proteins/villin/1vii.pdb"
-  pdb = PDBFile(protein_pdb)
+  pdb = PDBFile(args.pdb)
 
 forcefield = ForceField('amber99sb.xml', 'tip3p.xml')
 
@@ -43,7 +44,7 @@ modeller.addHydrogens(forcefield)
 print(modeller.topology)
 
 system = forcefield.createSystem(modeller.topology, nonbondedMethod=NoCutoff, nonbondedCutoff=1*nanometer, constraints=HBonds)
-integrator = LangevinIntegrator(300*kelvin, 1/picosecond, 0.002*picoseconds)
+integrator = LangevinIntegrator(args.temp*kelvin, 1/picosecond, 0.002*picoseconds)
 simulation = Simulation(modeller.topology, system, integrator, platform)
 simulation.context.setPositions(modeller.positions)
 simulation.minimizeEnergy()
