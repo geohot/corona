@@ -38,13 +38,16 @@ else:
   pdb = PDBFile(args.pdb)
 
 #forcefield = ForceField('amber99sb.xml', 'tip3p.xml')
-forcefield = ForceField('amber03.xml', 'tip3p.xml')
+forcefield = ForceField('amber03.xml', 'amber03_obc.xml')
 
 modeller = Modeller(pdb.topology, pdb.positions)
 modeller.addHydrogens(forcefield)
 print(modeller.topology)
 
-system = forcefield.createSystem(modeller.topology, nonbondedMethod=NoCutoff, nonbondedCutoff=1*nanometer, constraints=HBonds)
+system = forcefield.createSystem(modeller.topology,
+  implicitSolvent=OBC2,   # matches https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2980750/#bib39
+  nonbondedMethod=NoCutoff, nonbondedCutoff=1*nanometer,
+  constraints=HBonds)
 integrator = LangevinIntegrator(args.temp*kelvin, 1/picosecond, 2*femtoseconds)
 simulation = Simulation(modeller.topology, system, integrator, platform)
 simulation.context.setPositions(modeller.positions)
