@@ -37,7 +37,8 @@ else:
   # already folded protein
   pdb = PDBFile(args.pdb)
 
-forcefield = ForceField('amber99sb.xml', 'tip3p.xml')
+#forcefield = ForceField('amber99sb.xml', 'tip3p.xml')
+forcefield = ForceField('amber03.xml', 'tip3p.xml')
 
 modeller = Modeller(pdb.topology, pdb.positions)
 modeller.addHydrogens(forcefield)
