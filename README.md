@@ -95,6 +95,8 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
   - FAM and HEX fluorophores?
 
 ## :pill: Possible treatments and prophylactics
+**Disclaimer**: The information in this repository is for informational purposes only. It is *not* medical advice.
+
 ### Hydroxychloroquine + zinc
 - Zinc blocks RdRp
 - https://jvi.asm.org/content/91/21/e00754-17 -- how similar is Hep E RdRp?
