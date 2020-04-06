@@ -1,12 +1,12 @@
-# Reverse Engineering the Coronavirus (SARS-CoV-2)
+# Reverse engineering the coronavirus (SARS-CoV-2)
 
 **Start here**: [`corona.py`](corona.py)
 
 ## Background
 This project applies techniques from [reverse engineering](https://en.wikipedia.org/wiki/Reverse_engineering) to understand the [SARS-CoV-2](https://en.wikipedia.org/wiki/Severe_acute_respiratory_syndrome_coronavirus_2) virus. The goal here is simply to build an understanding of the virus from first principles.
 
-### :dna: Biology vs. :computer: Software
-Biological systems are fundamentally [information processing systems](https://en.wikipedia.org/wiki/Information_processor). While not a perfect analogy, software provides a useful framework for thinking about biology. The table below explains the analogy in more detail.
+### :dna: Biology vs. :computer: software
+Biological systems are fundamentally [information processing systems](https://en.wikipedia.org/wiki/Information_processor). While not a perfect analogy, software provides a useful framework for thinking about biology. The table below provides a rough outline of this analogy.
 
 :dna: Biology | :computer: Software | Notes
 ------- | -------- | -----
@@ -24,13 +24,26 @@ Biological systems are fundamentally [information processing systems](https://en
 [molecular dynamics](https://en.wikipedia.org/wiki/Molecular_dynamics) simulations of [protein folding](https://en.wikipedia.org/wiki/Protein_folding) | [dynamic analysis](https://en.wikipedia.org/wiki/Dynamic_program_analysis) | Simulation doesn't seem to work yet. Constrained by tooling and compute.
 no equivalent | [execution](https://en.wikipedia.org/wiki/Execution_(computing)) | We are reverse engineering a CAD format. Runs more like FPGA code, all at once. No serial execution. (What are the FPGA reverse engineering tools?)
 
-### Work to be done
+## Progress
+### Downloading the SARS-CoV-2 genome
+[GenBank](https://www.ncbi.nlm.nih.gov/genbank/) is the NIH genetic sequence database, an annotated collection of all publicly available DNA and RNA sequences. The SARS-CoV-2 sequences available in GenBank have been downloaded in [`download_sequences.py`](download_sequences.py).
+
+### Translating RNA to proteins
+[`lib.py`](lib.py) contains a function `translate` that converts an RNA sequence to a chain of [amino acids](https://en.wikipedia.org/wiki/Amino_acid). This function is used in [`corona.py`](corona.py).
+
+### Annotating functions
+The `translate` function is used in [`corona.py`](corona.py) to identify and annotate functions for all proteins encoded by the genome.
+
+### Folding proteins
+The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of protein folding in [`fold.py`](fold.py).
+
+## :bulb: Work to be done
 - Automatic extraction of genes from different coronaviruses
 - Good multisequence compare tool
 - Molecular dynamics?
 - Secondary Structure prediction on orf1a?
 
-### :question: Open questions
+## :question: Open questions
 - How is orf1ab cleaved into polypeptides? Can we predict this from the sequence?
 - How do the researchers know (guess?) where orf1ab cleaves?
   - nsp3 and nsp5 do it -- https://www.pnas.org/content/pnas/103/15/5717.full.pdf
@@ -56,7 +69,7 @@ no equivalent | [execution](https://en.wikipedia.org/wiki/Execution_(computing))
 - What adds the phosphate group to the N protein? Kinase?
 
 ## :test_tube: Testing
-### How Tests Work
+### How tests work
 - All based on https://en.wikipedia.org/wiki/Reverse_transcription_polymerase_chain_reaction
 - USA -- https://www.fda.gov/media/134922/download
   - selected from regions of the virus nucleocapsid (N) gene
@@ -67,7 +80,7 @@ no equivalent | [execution](https://en.wikipedia.org/wiki/Execution_(computing))
   - E gene detection (same for all coronavirus)
   - specific RdRp detection
 
-### Homemade Test?
+### Homemade test?
 - Isolation of viral RNA (no matter what)
   - https://www.qiagen.com/us/products/diagnostics-and-clinical-research/sample-processing/qiaamp-viral-rna-mini-kit/#orderinginformation
 - Primers and probes (to detect SARS-CoV-2)
@@ -81,21 +94,21 @@ no equivalent | [execution](https://en.wikipedia.org/wiki/Execution_(computing))
   - Open qPCR, understand https://www.chaibio.com/openqpcr
   - FAM and HEX fluorophores?
 
-## :pill: Possible Treatments and Prophylactics
-### Hydroxychloroquine + Zinc
+## :pill: Possible treatments and prophylactics
+### Hydroxychloroquine + zinc
 - Zinc blocks RdRp
 - https://jvi.asm.org/content/91/21/e00754-17 -- how similar is Hep E RdRp?
 - https://www.ncbi.nlm.nih.gov/pubmed/21079686
 - Chloroquine Is a Zinc Ionophore (allows zinc into the cell)
 - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4182877/
 
-### Novel RdRp Inhibitors
+### RdRp inhibitors
 - Favipiravir (prodrug for favipiravir-RTP)
 - Adenosine Analog
   - Remdesivir (prodrug for GS-441524)
   - Galidesivir
 
-### :syringe: Homemade Vaccine
+### Homemade DNA vaccine
 - https://siasky.net/bACLKGmcmX4NCp47WwOOJf0lU666VLeT5HRWpWVtqZPjEA
 - Based on injecting DNA (plasmid) that expresses the spike protein
 
