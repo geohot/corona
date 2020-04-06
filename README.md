@@ -104,7 +104,7 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
 - Chloroquine Is a Zinc Ionophore (allows zinc into the cell)
 - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4182877/
 
-### RdRp inhibitors
+### [RdRP](https://en.wikipedia.org/wiki/RNA-dependent_RNA_polymerase) inhibitors
 - Favipiravir (prodrug for favipiravir-RTP)
 - Adenosine Analog
   - Remdesivir (prodrug for GS-441524)
