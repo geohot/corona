@@ -5,14 +5,14 @@
 ## Background
 This project applies techniques from [reverse engineering](https://en.wikipedia.org/wiki/Reverse_engineering) to understand the [SARS-CoV-2](https://en.wikipedia.org/wiki/Severe_acute_respiratory_syndrome_coronavirus_2) virus. The goal here is simply to build an understanding of the virus from first principles.
 
-### Biology vs. Software
+### :dna: Biology vs. :computer: Software
 Biological systems are fundamentally [information processing systems](https://en.wikipedia.org/wiki/Information_processor). While not a perfect analogy, software provides a useful framework for thinking about biology. The table below explains the analogy in more detail.
 
-Biology | Software | Notes
+:dna: Biology | :computer: Software | Notes
 ------- | -------- | -----
 [nucleotide](https://en.wikipedia.org/wiki/Nucleotide) | [byte](https://en.wikipedia.org/wiki/Byte) |
 [genome](https://en.wikipedia.org/wiki/Genome) | [bytecode](https://en.wikipedia.org/wiki/Bytecode) |
-[translation](https://en.wikipedia.org/wiki/Translation_(biology)) | [disassembly](https://en.wikipedia.org/wiki/Disassembler) | 3 byte wide instruction set with arbitrary "reading frames"
+[translation](https://en.wikipedia.org/wiki/Translation_(biology)) | [disassembly](https://en.wikipedia.org/wiki/Disassembler) | 3 byte wide instruction set with arbitrary "[reading frames](https://en.wikipedia.org/wiki/Reading_frame)"
 [protein](https://en.wikipedia.org/wiki/Protein) | [function](https://en.wikipedia.org/wiki/Function_(computer_science)) | a polyprotein is a function with multiple pieces
 [protein secondary structure](https://en.wikipedia.org/wiki/Protein_secondary_structure) | [basic blocks](https://en.wikipedia.org/wiki/Basic_block) | 80% accuracy in [prediction](https://en.wikipedia.org/wiki/Protein_structure_prediction#Secondary_structure)
 [protein tertiary structure](https://en.wikipedia.org/wiki/Protein_tertiary_structure) | | This seems like the hard one to predict: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205819
@@ -30,7 +30,7 @@ no equivalent | [execution](https://en.wikipedia.org/wiki/Execution_(computing))
 - Molecular dynamics?
 - Secondary Structure prediction on orf1a?
 
-### Open questions
+### :question: Open questions
 - How is orf1ab cleaved into polypeptides? Can we predict this from the sequence?
 - How do the researchers know (guess?) where orf1ab cleaves?
   - nsp3 and nsp5 do it -- https://www.pnas.org/content/pnas/103/15/5717.full.pdf
@@ -55,7 +55,8 @@ no equivalent | [execution](https://en.wikipedia.org/wiki/Execution_(computing))
     - SARS-CoV-2
 - What adds the phosphate group to the N protein? Kinase?
 
-### Tests (how they work)
+## :test_tube: Testing
+### How Tests Work
 - All based on https://en.wikipedia.org/wiki/Reverse_transcription_polymerase_chain_reaction
 - USA -- https://www.fda.gov/media/134922/download
   - selected from regions of the virus nucleocapsid (N) gene
@@ -66,7 +67,7 @@ no equivalent | [execution](https://en.wikipedia.org/wiki/Execution_(computing))
   - E gene detection (same for all coronavirus)
   - specific RdRp detection
 
-### Homemade test?
+### Homemade Test?
 - Isolation of viral RNA (no matter what)
   - https://www.qiagen.com/us/products/diagnostics-and-clinical-research/sample-processing/qiaamp-viral-rna-mini-kit/#orderinginformation
 - Primers and probes (to detect SARS-CoV-2)
@@ -80,24 +81,25 @@ no equivalent | [execution](https://en.wikipedia.org/wiki/Execution_(computing))
   - Open qPCR, understand https://www.chaibio.com/openqpcr
   - FAM and HEX fluorophores?
 
-### Potential Treatments 
-- Hydroxychloroquine + Zinc
-  - Zinc blocks RdRp
-    - https://jvi.asm.org/content/91/21/e00754-17 -- how similar is Hep E RdRp?
-    - https://www.ncbi.nlm.nih.gov/pubmed/21079686
-  - Chloroquine Is a Zinc Ionophore (allows zinc into the cell)
-    - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4182877/
-- Novel RdRp inhibitors
-  - Favipiravir (prodrug for favipiravir-RTP)
+## :pill: Possible Treatments and Prophylactics
+### Hydroxychloroquine + Zinc
+- Zinc blocks RdRp
+- https://jvi.asm.org/content/91/21/e00754-17 -- how similar is Hep E RdRp?
+- https://www.ncbi.nlm.nih.gov/pubmed/21079686
+- Chloroquine Is a Zinc Ionophore (allows zinc into the cell)
+- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4182877/
+
+### Novel RdRp Inhibitors
+- Favipiravir (prodrug for favipiravir-RTP)
 - Adenosine Analog
   - Remdesivir (prodrug for GS-441524)
   - Galidesivir
 
-### Homemade Vaccine
+### :syringe: Homemade Vaccine
 - https://siasky.net/bACLKGmcmX4NCp47WwOOJf0lU666VLeT5HRWpWVtqZPjEA
 - Based on injecting DNA (plasmid) that expresses the spike protein
 
-### Resources
+### :books: Resources
 - corona
   - Chapter 4 - Coronavirus Pathogenesis -- https://www.sciencedirect.com/science/article/pii/B9780123858856000092
   - https://www.futuremedicine.com/doi/pdf/10.2217/fvl-2018-0008
