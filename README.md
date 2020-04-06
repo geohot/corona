@@ -112,15 +112,30 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
 - https://siasky.net/bACLKGmcmX4NCp47WwOOJf0lU666VLeT5HRWpWVtqZPjEA
 - Based on injecting DNA (plasmid) that expresses the spike protein
 
-### :books: Resources
-- corona
-  - Chapter 4 - Coronavirus Pathogenesis -- https://www.sciencedirect.com/science/article/pii/B9780123858856000092
-  - https://www.futuremedicine.com/doi/pdf/10.2217/fvl-2018-0008
-  - https://www.sciencedirect.com/science/article/pii/S2095177920302045
-  - http://korkinlab.org/wuhan
+## :books: Resources
+### Coronavirus-related publications 
+- Chapter 4 - Coronavirus Pathogenesis -- https://www.sciencedirect.com/science/article/pii/B9780123858856000092
+- https://www.futuremedicine.com/doi/pdf/10.2217/fvl-2018-0008
+- https://www.sciencedirect.com/science/article/pii/S2095177920302045
+- http://korkinlab.org/wuhan
+
+### Biology
 - textbooks
   - Molecular Biology of the Cell
 - classes 
   - better tests - https://ocw.mit.edu/courses/biology/7-012-introduction-to-biology-fall-2004/index.htm
   - suspected better lectures - https://ocw.mit.edu/courses/biology/7-014-introductory-biology-spring-2005/index.htm
+  - basics - https://www.khanacademy.org/science/biology
 
+### Bioinformatics
+- Nextstrain
+  - https://nextstrain.org/ncov
+  - https://github.com/nextstrain/ncov
+  - https://github.com/nextstrain/augur
+- https://biopython.org/
+- https://www.reddit.com/r/bioinformatics/comments/191ykr/resources_for_learning_bioinformatics/
+- https://en.wikipedia.org/wiki/Bioinformatics
+
+### Epidemic modeling
+- https://gabgoh.github.io/COVID/index.html
+- http://epidemicforecasting.org
