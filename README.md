@@ -5,10 +5,10 @@
 ## Background
 This project applies techniques from [reverse engineering](https://en.wikipedia.org/wiki/Reverse_engineering) to understand the [SARS-CoV-2](https://en.wikipedia.org/wiki/Severe_acute_respiratory_syndrome_coronavirus_2) virus. The goal here is simply to build an understanding of the virus from first principles.
 
-### :dna: Biology vs. :computer: software
+### :microscope: Biology vs. :computer: software
 Biological systems are fundamentally [information processing systems](https://en.wikipedia.org/wiki/Information_processor). While not a perfect analogy, software provides a useful framework for thinking about biology. The table below provides a rough outline of this analogy.
 
-:dna: Biology | :computer: Software | Notes
+:microscope: Biology | :computer: Software | Notes
 ------- | -------- | -----
 [nucleotide](https://en.wikipedia.org/wiki/Nucleotide) | [byte](https://en.wikipedia.org/wiki/Byte) |
 [genome](https://en.wikipedia.org/wiki/Genome) | [bytecode](https://en.wikipedia.org/wiki/Bytecode) |
@@ -24,7 +24,7 @@ Biological systems are fundamentally [information processing systems](https://en
 [molecular dynamics](https://en.wikipedia.org/wiki/Molecular_dynamics) simulations of [protein folding](https://en.wikipedia.org/wiki/Protein_folding) | [dynamic analysis](https://en.wikipedia.org/wiki/Dynamic_program_analysis) | Simulation doesn't seem to work yet. Constrained by tooling and compute.
 no equivalent | [execution](https://en.wikipedia.org/wiki/Execution_(computing)) | We are reverse engineering a CAD format. Runs more like FPGA code, all at once. No serial execution. (What are the FPGA reverse engineering tools?)
 
-## Progress
+## :wrench: Progress
 ### Downloading the SARS-CoV-2 genome
 [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) is the NIH genetic sequence database, an annotated collection of all publicly available DNA and RNA sequences. The SARS-CoV-2 sequences available in GenBank have been downloaded in [`download_sequences.py`](download_sequences.py).
 
@@ -68,7 +68,7 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
     - SARS-CoV-2
 - What adds the phosphate group to the N protein? Kinase?
 
-## :test_tube: Testing
+## :droplet: Testing
 ### How tests work
 - All based on https://en.wikipedia.org/wiki/Reverse_transcription_polymerase_chain_reaction
 - USA -- https://www.fda.gov/media/134922/download
