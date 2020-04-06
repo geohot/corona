@@ -2,7 +2,7 @@
 
 **Start here**: [`corona.py`](corona.py)
 
-## Background
+## :thought_balloon: Background
 This project applies techniques from [reverse engineering](https://en.wikipedia.org/wiki/Reverse_engineering) to understand the [SARS-CoV-2](https://en.wikipedia.org/wiki/Severe_acute_respiratory_syndrome_coronavirus_2) virus. The goal here is simply to build an understanding of the virus from first principles.
 
 ### :microscope: Biology vs. :computer: software
@@ -95,7 +95,7 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
   - FAM and HEX fluorophores?
 
 ## :pill: Possible treatments and prophylactics
-**Disclaimer**: The information in this repository is for informational purposes only. It is *not* medical advice.
+:warning: **Disclaimer**: The information in this repository is for informational purposes only. It is *not* medical advice.
 
 ### Hydroxychloroquine + zinc
 - Zinc blocks RdRp
