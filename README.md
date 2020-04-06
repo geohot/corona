@@ -1,6 +1,34 @@
-## Reverse engineering the Coronavirus
+# Reverse Engineering the Coronavirus (SARS-CoV-2)
 
-See [`corona.py`](corona.py)
+**Start here**: [`corona.py`](corona.py)
+
+## Background
+This project applies techniques from [reverse engineering](https://en.wikipedia.org/wiki/Reverse_engineering) to understand the [SARS-CoV-2](https://en.wikipedia.org/wiki/Severe_acute_respiratory_syndrome_coronavirus_2) virus. The goal here is simply to build an understanding of the virus from first principles.
+
+### Biology vs. Software
+Biological systems are fundamentally [information processing systems](https://en.wikipedia.org/wiki/Information_processor). While not a perfect analogy, software provides a useful framework for thinking about biology. The table below explains the analogy in more detail.
+
+Biology | Software | Notes
+------- | -------- | -----
+[nucleotide](https://en.wikipedia.org/wiki/Nucleotide) | [byte](https://en.wikipedia.org/wiki/Byte) |
+[genome](https://en.wikipedia.org/wiki/Genome) | [bytecode](https://en.wikipedia.org/wiki/Bytecode) |
+[translation](https://en.wikipedia.org/wiki/Translation_(biology)) | [disassembly](https://en.wikipedia.org/wiki/Disassembler) | 3 byte wide instruction set with arbitrary "reading frames"
+[protein](https://en.wikipedia.org/wiki/Protein) | [function](https://en.wikipedia.org/wiki/Function_(computer_science)) | a polyprotein is a function with multiple pieces
+[protein secondary structure](https://en.wikipedia.org/wiki/Protein_secondary_structure) | [basic blocks](https://en.wikipedia.org/wiki/Basic_block) | 80% accuracy in [prediction](https://en.wikipedia.org/wiki/Protein_structure_prediction#Secondary_structure)
+[protein tertiary structure](https://en.wikipedia.org/wiki/Protein_tertiary_structure) | | This seems like the hard one to predict: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205819
+[quaternary structure](https://en.wikipedia.org/wiki/Protein_quaternary_structure) | [compiled function with inlining](https://en.wikipedia.org/wiki/Inline_expansion) | https://en.wikipedia.org/wiki/Protein%E2%80%93protein_interaction_prediction
+[gene](https://en.wikipedia.org/wiki/Gene) | [library](https://en.wikipedia.org/wiki/Library_(computing)) | bacteria are statically linked, viruses are dynamically linked
+[transcription](https://en.wikipedia.org/wiki/Transcription_(biology)) | [loading](https://en.wikipedia.org/wiki/Loader_(computing))
+[protein structure prediction](https://en.wikipedia.org/wiki/Protein_structure_prediction) | [library identification](https://www.hex-rays.com/products/ida/tech/flirt/in_depth/)
+[genome analysis](https://en.wikipedia.org/wiki/Genomics#Genome_analysis) | [static analysis](https://en.wikipedia.org/wiki/Static_program_analysis) |
+[molecular dynamics](https://en.wikipedia.org/wiki/Molecular_dynamics) simulations of [protein folding](https://en.wikipedia.org/wiki/Protein_folding) | [dynamic analysis](https://en.wikipedia.org/wiki/Dynamic_program_analysis) | Simulation doesn't seem to work yet. Constrained by tooling and compute.
+no equivalent | [execution](https://en.wikipedia.org/wiki/Execution_(computing)) | We are reverse engineering a CAD format. Runs more like FPGA code, all at once. No serial execution. (What are the FPGA reverse engineering tools?)
+
+### Work to be done
+- Automatic extraction of genes from different coronaviruses
+- Good multisequence compare tool
+- Molecular dynamics?
+- Secondary Structure prediction on orf1a?
 
 ### Open questions
 - How is orf1ab cleaved into polypeptides? Can we predict this from the sequence?
@@ -27,36 +55,6 @@ See [`corona.py`](corona.py)
     - SARS-CoV-2
 - What adds the phosphate group to the N protein? Kinase?
 
-### Work to be done
-- Automatic extraction of genes from different coronaviruses
-- Good multisequence compare tool
-- Molecular dynamics?
-- Secondary Structure prediction on orf1a?
-
-### Homemade Vaccine
-- https://siasky.net/bACLKGmcmX4NCp47WwOOJf0lU666VLeT5HRWpWVtqZPjEA
-- Based on injecting DNA (plasmid) that expresses the spike protein
-
-### Bio vs IDA
-- Each letter in genome is a "byte at address x"
-- Translation = Disassembly, it's a 3 byte wide instruction set with arbitrary "reading frames"
-- Protein ~ Function. polyprotein = Function with multiple pieces
-- Proteins appear to have "basic blocks" = "Secondary Structure"
-  - 80% accuracy in prediction: https://en.wikipedia.org/wiki/Protein_structure_prediction#Secondary_structure
-- "Tertiary Structure" forms a function
-  - This seems like the hard one to predict: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0205819
-- "Quaternary Structure" is like compiled function with inlining
-  - https://en.wikipedia.org/wiki/Protein%E2%80%93protein_interaction_prediction
-- Gene ~ library (bacteria are static linked, viruses are dynamically linked)
-- Transcription = loading off disk
-
-### Analysis
-- There is no equivalent to execution, we are reverse engineering a CAD format
-- Static analysis, looking at the DNA, protein structure prediction, FLIRT signatures, etc...
-- Simulation doesn't seem to work yet
-- Tons of in system dynamic analysis, but the tools are crap
-- Runs more like FPGA code, all at once, no serial execution (what are the FPGA re tools?)
-
 ### Tests (how they work)
 - All based on https://en.wikipedia.org/wiki/Reverse_transcription_polymerase_chain_reaction
 - USA -- https://www.fda.gov/media/134922/download
@@ -82,7 +80,7 @@ See [`corona.py`](corona.py)
   - Open qPCR, understand https://www.chaibio.com/openqpcr
   - FAM and HEX fluorophores?
 
-### Treatments 
+### Potential Treatments 
 - Hydroxychloroquine + Zinc
   - Zinc blocks RdRp
     - https://jvi.asm.org/content/91/21/e00754-17 -- how similar is Hep E RdRp?
@@ -94,6 +92,10 @@ See [`corona.py`](corona.py)
 - Adenosine Analog
   - Remdesivir (prodrug for GS-441524)
   - Galidesivir
+
+### Homemade Vaccine
+- https://siasky.net/bACLKGmcmX4NCp47WwOOJf0lU666VLeT5HRWpWVtqZPjEA
+- Based on injecting DNA (plasmid) that expresses the spike protein
 
 ### Resources
 - corona
