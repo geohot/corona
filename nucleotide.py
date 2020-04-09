@@ -31,9 +31,8 @@ def download(nucleotide):
         except Exception as err:
             print(err)
 
-fasta_files = [join(data_dir,f) for f in listdir(data_dir) if isfile(join(data_dir, f)) and fasta_pattern.match(f)]
-
 def available():
+    fasta_files = [join(data_dir,f) for f in listdir(data_dir) if isfile(join(data_dir, f)) and fasta_pattern.match(f)]
     names = [f.split("/")[-1].strip(".FASTA") for f in fasta_files]
     return names
 
