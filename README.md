@@ -110,9 +110,6 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
   - Remdesivir (prodrug for GS-441524)
   - Galidesivir
 
-### Homemade DNA vaccine
-- https://siasky.net/bACLKGmcmX4NCp47WwOOJf0lU666VLeT5HRWpWVtqZPjEA
-- Based on injecting DNA (plasmid) that expresses the spike protein
 
 ## :books: Resources
 ### Coronavirus-related publications 
