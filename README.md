@@ -103,12 +103,29 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
 - https://www.ncbi.nlm.nih.gov/pubmed/21079686
 - Chloroquine Is a Zinc Ionophore (allows zinc into the cell)
 - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4182877/
+- Without zinc (seems ineffective)
+  - https://www.recoverytrial.net/files/hcq-recovery-statement-050620-final-002.pdf (where is study?)
+- With zinc
+  - https://www.infezmed.it/media/journal/Vol_28_2_2020_9.pdf
+  - https://www.sciencedirect.com/science/article/pii/S0306987720306435
+  - No results yet: https://www.clinicaltrials.gov/ct2/show/NCT04377646
 
 ### [RdRP](https://en.wikipedia.org/wiki/RNA-dependent_RNA_polymerase) inhibitors
 - Favipiravir (prodrug for favipiravir-RTP)
 - Adenosine Analog
   - Remdesivir (prodrug for GS-441524)
+    - https://www.nejm.org/doi/pdf/10.1056/NEJMoa2007764?articleTools=true
   - Galidesivir
+
+### Dexamethasone
+- corticosteroid = anti-inflammatory + immunosuppressant
+- https://www.medrxiv.org/content/10.1101/2020.06.22.20137273v1.full.pdf
+- Effects in late stage (blocking immune response?)
+
+### Lopinavir-Ritonavir (AIDS cocktail)
+- Both drugs are protease inhibitors
+- Wouldn't expect it to work, don't think covid has protease
+- No effect: https://www.recoverytrial.net/files/lopinavir-ritonavir-recovery-statement-29062020_final.pdf
 
 ### Homemade DNA vaccine
 - https://siasky.net/bACLKGmcmX4NCp47WwOOJf0lU666VLeT5HRWpWVtqZPjEA
@@ -120,6 +137,7 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
 - https://www.futuremedicine.com/doi/pdf/10.2217/fvl-2018-0008
 - https://www.sciencedirect.com/science/article/pii/S2095177920302045
 - http://korkinlab.org/wuhan
+- https://github.com/mattroconnor/deep_learning_coronavirus_cure
 
 ### Biology
 - textbooks
@@ -141,3 +159,16 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
 ### Epidemic modeling
 - https://gabgoh.github.io/COVID/index.html
 - http://epidemicforecasting.org
+
+### Antibodies
+- https://www.medrxiv.org/content/10.1101/2020.07.09.20148429v1.full.pdf
+- https://www.medrxiv.org/content/10.1101/2020.05.11.20086439v2.full.pdf
+
+### Masks
+- Looking for large controlled studies measuring infection rate with/without wearing mask
+- https://bmjopen.bmj.com/content/bmjopen/5/4/e006577.full.pdf -- cloth masks bad surgical masks nothing
+- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2662657/pdf/08-1167_finalRCME.pdf -- unclear, low adherence
+- https://sci-hub.tw/10.1001/archpedi.1987.04460060111049 -- masks + goggles help, unclear on mask type
+- https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1750-2659.2011.00198.X -- N95 ~2x more effective than medical masks
+
+
