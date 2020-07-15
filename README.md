@@ -127,10 +127,6 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
 - Wouldn't expect it to work, don't think covid has protease
 - No effect: https://www.recoverytrial.net/files/lopinavir-ritonavir-recovery-statement-29062020_final.pdf
 
-### Homemade DNA vaccine
-- https://siasky.net/bACLKGmcmX4NCp47WwOOJf0lU666VLeT5HRWpWVtqZPjEA
-- Based on injecting DNA (plasmid) that expresses the spike protein
-
 ## :books: Resources
 ### Coronavirus-related publications 
 - Chapter 4 - Coronavirus Pathogenesis -- https://www.sciencedirect.com/science/article/pii/B9780123858856000092
@@ -170,5 +166,34 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
 - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2662657/pdf/08-1167_finalRCME.pdf -- unclear, low adherence
 - https://sci-hub.tw/10.1001/archpedi.1987.04460060111049 -- masks + goggles help, unclear on mask type
 - https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1750-2659.2011.00198.X -- N95 ~2x more effective than medical masks
+- https://jamanetwork.com/journals/jama/article-abstract/184819 -- N95 and surgical similar in effectiveness
+
+### Vaccines
+- https://en.wikipedia.org/wiki/COVID-19_vaccine
+- https://www.nytimes.com/interactive/2020/science/coronavirus-vaccine-tracker.html
+- generic vaccine types -- https://www.niaid.nih.gov/research/vaccine-types
+- Nucleic Acid Vaccines (none are currently used)
+  - Use mRNA to produce viral proteins
+    - "It's a very unique way of making a vaccine and, so far, no (such) vaccine has been licenced for infectious disease"
+    - Moderna, mRNA-1273 -- https://clinicaltrials.gov/ct2/show/NCT04283461
+    - https://www.biorxiv.org/content/10.1101/2020.04.22.055608v1.full.pdf
+    - https://www.medrxiv.org/content/10.1101/2020.06.30.20142570v1.full.pdf
+  - DNA vaccine
+    - "No DNA vaccines have been approved for human use in the United States"
+    - Based on injecting DNA (plasmid) that expresses the spike protein
+    - https://siasky.net/bACLKGmcmX4NCp47WwOOJf0lU666VLeT5HRWpWVtqZPjEA
+  - Viral Vector Vaccines
+    - "There are no viral vector vaccines currently on market for use in humans."
+    - adenovirus vector, AZD1222
+    - recombinant adenovirus type 5 vector, Ad5-nCoV
+- Protein-Based Vaccines (subunit vaccines?)
+- Whole-Virus Vaccines (inactivated vs live-attenuated)
+  - Like old vaccines (live attenuated?)
+  - In phase 3 already, Sinopharm = 15,000 people
+- Nanoparticle vaccine?
+  - https://www.ipd.uw.edu/2019/03/ipds-first-nanoparticle-vaccine/
+
+### Genome studies (what genes = bad covid)
+- https://www.nejm.org/doi/full/10.1056/NEJMoa2020283?source=nejmtwitter&medium=organic-social
 
 
