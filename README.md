@@ -149,6 +149,7 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
   - https://github.com/nextstrain/ncov
   - https://github.com/nextstrain/augur
 - https://biopython.org/
+- https://github.com/cogent3/cogent3
 - https://www.reddit.com/r/bioinformatics/comments/191ykr/resources_for_learning_bioinformatics/
 - https://en.wikipedia.org/wiki/Bioinformatics
 
