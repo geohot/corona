@@ -2,9 +2,9 @@
 
 (Oi this gonna piss @Burd*ck off again)
 
-**not only will it be masks that dont really work that I will prove in this, I will also prove even respirators do not work. **
+**not only will it be masks that dont really work that I will prove in this, I will also prove even respirators do not work.**
 
-**Framework: **
+**Framework:**
 
 - One has to agree that not all of us are able to buy the best of masks and use them therefore this model will be built upon n96, cloth, and surgical. respirators are the normal ones too. 
 
