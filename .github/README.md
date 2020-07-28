@@ -157,9 +157,14 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
 - https://gabgoh.github.io/COVID/index.html
 - http://epidemicforecasting.org
 
+### Corona Trackers
+- https://github.com/mhdhejazi/CoronaTracker
+- https://github.com/ExpDev07/coronavirus-tracker-api
+
 ### Antibodies
 - https://www.medrxiv.org/content/10.1101/2020.07.09.20148429v1.full.pdf
 - https://www.medrxiv.org/content/10.1101/2020.05.11.20086439v2.full.pdf
+- https://www.biorxiv.org/content/10.1101/2020.07.21.214759v1.full.pdf
 
 ### Masks
 - Looking for large controlled studies measuring infection rate with/without wearing mask
@@ -168,6 +173,8 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
 - https://sci-hub.tw/10.1001/archpedi.1987.04460060111049 -- masks + goggles help, unclear on mask type
 - https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1750-2659.2011.00198.X -- N95 ~2x more effective than medical masks
 - https://jamanetwork.com/journals/jama/article-abstract/184819 -- N95 and surgical similar in effectiveness
+- https://europepmc.org/backend/ptpmcrender.fcgi?accid=PMC5705692&blobtype=pdf -- the efficacy of medical masks and respirators against respiratory infection in healthcare workers
+- [this article](https://https://github.com/KnowsCount/corona-1/blob/master/miscellaneous/masks.md) is where @KnowsCount wrote about why masks dont work
 
 ### Vaccines
 - https://en.wikipedia.org/wiki/COVID-19_vaccine
