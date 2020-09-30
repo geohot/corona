@@ -184,7 +184,7 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
     - Based on injecting DNA (plasmid) that expresses the spike protein
     - https://siasky.net/bACLKGmcmX4NCp47WwOOJf0lU666VLeT5HRWpWVtqZPjEA
   - Viral Vector Vaccines
-    - "There are no viral vector vaccines currently on market for use in humans."
+    - "There are no viral vector vaccines currently in market for use in humans."
     - adenovirus vector, AZD1222
     - recombinant adenovirus type 5 vector, Ad5-nCoV
 - Protein-Based Vaccines (subunit vaccines?)
