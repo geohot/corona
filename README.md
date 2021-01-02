@@ -193,6 +193,9 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
   - In phase 3 already, Sinopharm = 15,000 people
 - Nanoparticle vaccine?
   - https://www.ipd.uw.edu/2019/03/ipds-first-nanoparticle-vaccine/
+- Reverse Engineering
+  - https://berthub.eu/articles/posts/reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/
+  - https://berthub.eu/articles/posts/part-2-reverse-engineering-source-code-of-the-biontech-pfizer-vaccine/
 
 ### Genome studies (what genes = bad covid)
 - https://www.nejm.org/doi/full/10.1056/NEJMoa2020283?source=nejmtwitter&medium=organic-social
