@@ -200,4 +200,17 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
 ### Genome studies (what genes = bad covid)
 - https://www.nejm.org/doi/full/10.1056/NEJMoa2020283?source=nejmtwitter&medium=organic-social
 
+### DNA Synthesis
+- Produce "oligos" of around 170-200 bp
+  - "Phosphoramidite chemistry" -- it's a chemical process
+  - Column based / Array based
+  - https://www.nature.com/articles/nmeth.2918
+- Then assemble them
+  - https://en.wikipedia.org/wiki/Gibson_assembly
+  - 20-40 bp overlap
+  - 5-15 oligos can be combined at once (~2 kb produced)
+- New technologies
+  - https://static1.squarespace.com/static/5c981af7ebfc7fc8528d6564/t/5f4048cda662a571341b9a60/1598048462430/Alix+-+MDD+DNA+Writing.pdf
+
+
 
