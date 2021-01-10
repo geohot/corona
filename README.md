@@ -203,6 +203,7 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
 ### DNA Synthesis
 - Produce "oligos" of around 170-200 bp
   - "Phosphoramidite chemistry" -- it's a chemical process
+  - Size limited by 0.99^n -> 13% yield on 200bp if the process is 99% good
   - Column based / Array based
   - https://www.nature.com/articles/nmeth.2918
 - Then assemble them
