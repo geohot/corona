@@ -3,10 +3,10 @@
 **Start here**: [`corona.py`](corona.py)
 
 ## :thought_balloon: Background
-This project applies techniques from [reverse engineering](https://en.wikipedia.org/wiki/Reverse_engineering) to understand the [SARS-CoV-2](https://en.wikipedia.org/wiki/Severe_acute_respiratory_syndrome_coronavirus_2) virus. The goal here is simply to build an understanding of the virus from first principles.
+This project applies techniques from [reverse engineering](https://en.wikipedia.org/wiki/Reverse_engineering) to understand the [SARS-CoV-2](https://en.wikipedia.org/wiki/Severe_acute_respiratory_syndrome_coronavirus_2) virus. The goal here is simply to build an understanding of the virus from the first principles.
 
 ### Biology vs. software
-Biological systems are fundamentally [information processing systems](https://en.wikipedia.org/wiki/Information_processor). While not a perfect analogy, software provides a useful framework for thinking about biology. The table below provides a rough outline of this analogy.
+Biological systems are fundamentally [information processing systems](https://en.wikipedia.org/wiki/Information_processor). While not a perfect analogy, the software provides a useful framework for thinking about biology. The table below provides a rough outline of this analogy.
 
 :microscope: Biology | :computer: Software | Notes
 ------- | -------- | -----
