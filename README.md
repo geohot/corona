@@ -141,6 +141,7 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
 - classes 
   - better tests - https://ocw.mit.edu/courses/biology/7-012-introduction-to-biology-fall-2004/index.htm
   - suspected better lectures - https://ocw.mit.edu/courses/biology/7-014-introductory-biology-spring-2005/index.htm
+  - alternative lectures - https://youtube.com/playlist?list=PLGhmZX2NKiNldpyRUBBEzNoWL0Cso1jip
   - basics - https://www.khanacademy.org/science/biology
 
 ### Bioinformatics
