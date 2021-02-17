@@ -143,6 +143,8 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
   - suspected better lectures - https://ocw.mit.edu/courses/biology/7-014-introductory-biology-spring-2005/index.htm
   - alternative lectures - https://youtube.com/playlist?list=PLGhmZX2NKiNldpyRUBBEzNoWL0Cso1jip
   - basics - https://www.khanacademy.org/science/biology
+- ebook/web
+  - cloning/mol bio tech - https://www.addgene.org/educational-resources/
 
 ### Bioinformatics
 - Nextstrain
@@ -153,6 +155,7 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
 - https://github.com/cogent3/cogent3
 - https://www.reddit.com/r/bioinformatics/comments/191ykr/resources_for_learning_bioinformatics/
 - https://en.wikipedia.org/wiki/Bioinformatics
+- https://www.oxfordjournals.org/nar/database/c/ - NAR biodatabases annual issue
 
 ### Epidemic modeling
 - https://gabgoh.github.io/COVID/index.html
