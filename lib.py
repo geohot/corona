@@ -38,19 +38,32 @@ for t in tt.split("\n"):
       print("dup", vv)
     dec[vv.strip()] = k
 
-def translate(x, protein=False):
-  x = x.lower()
-  aa = []
-  for i in range(0, len(x)-2, 3):
-    aa.append(dec[x[i:i+3]])
-  aa = ''.join(aa)
+class DNA:
+  def __init__(self):
+    self.region = []
+    self.subsequence = []
+
+  def __del__(self):
+        print('Destructor called, DNA object deleted.') 
+    
+def translate(region, protein=False):
+  dna = DNA()
+  dna.region = region.lower()
+
+  # Iterate through all but the last two genes in the DNA region, jumping by 3
+  for i in range(0, len(dna.region)-2, 3):
+    # Append each dna.subsequence 
+    dna.subsequence.append(dec[dna.region[i:i+3]])
+  dna.subsequence = ''.join(dna.subsequence)
   if protein:
-    if aa[0] != "M" or aa[-1] != "*":
+    if dna.subsequence[0] != "M" or dna.subsequence[-1] != "*":
       print("BAD PROTEIN")
-      print(aa)
+      print(dna.subsequence)
       return None
-    aa = aa[:-1]
-  return aa
+    dna.subsequence = dna.subsequence[:-1]
+
+  del dna # Delete the DNA object once done
+  return dna.subsequence
 
 ltl = 'Asp D Glu E Arg R Lys K His H Asn N Gln Q Ser S Thr T Tyr Y Ala A Gly G Val V Leu L Ile I Pro P Phe F Met M Trp W Cys C'
 ltl = ltl.split(" ")
