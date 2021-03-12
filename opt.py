@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from lib import cc as virus
 from vaccine.load import dat as vaccine
-from corona import corona
+from corona import coronaDNA
 
 virus = virus.replace("T", "U")
 vaccine = vaccine.replace("Ψ", "U")
