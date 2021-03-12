@@ -12,8 +12,6 @@ from lib import cc, translate
 # copy machine -- https://www.uniprot.org/uniprot/Q0ZJN1
 # zhanglab breaks this down into many more proteins
 
-corona = {}
-
 # begin: 266 base pairs "untranslated"
 # https://en.wikipedia.org/wiki/Five_prime_untranslated_region
 
@@ -43,47 +41,55 @@ corona = {}
 #   16 = 2'-O-methyltransferase (2'-O-MT)
 #        https://en.wikipedia.org/wiki/MRNA_(nucleoside-2%27-O-)-methyltransferase
 
-# in front "the untranslated leader sequence that ends with the Transcription Regulation Sequence"
-corona['untranslated_region'] = cc[0:265]
+class coronaDNA:
+  def __init__(self):
+    # in front "the untranslated leader sequence that ends with the Transcription Regulation Sequence"
+    self.untranslated_region = cc[0:265]
 
-corona['orf1a'] = translate(cc[266-1:13483], True)
+    self.orf1a = translate(cc[266-1:13483], True)
 
-# cc[266-1+4398*3:13468] = 'TTT_TTA_AAC' aka 'X_XXY_YYZ'
-# https://en.wikipedia.org/wiki/Ribosomal_frameshift
-# Programmed −1 Ribosomal Frameshifting
-# TODO: add this to the translate function with automatic detection
-corona['orf1b'] = translate(cc[13468-1:21555], False).strip("*")  # chop off the stop, note this doesn't have a start
+    # cc[266-1+4398*3:13468] = 'TTT_TTA_AAC' aka 'X_XXY_YYZ'
+    # https://en.wikipedia.org/wiki/Ribosomal_frameshift
+    # Programmed −1 Ribosomal Frameshifting
+    # TODO: add this to the translate function with automatic detection
+    self.orf1b = translate(cc[13468-1:21555], False).strip("*")  # chop off the stop, note this doesn't have a start
 
-# exploit vector, this attaches to ACE2. also called "surface glycoprotein"
-# https://www.ncbi.nlm.nih.gov/Structure/pdb/6VYB -- open state
-# https://www.ncbi.nlm.nih.gov/Structure/pdb/6VXX -- closed state
-# 1273 amino acids
-#   S1  = 14-685
-#   S2  = 686-1273
-#   S2' = 816-1273
-# https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2750777/
-corona['spike_glycoprotein'] = translate(cc[21563-1:25384], True)
+    # exploit vector, this attaches to ACE2. also called "surface glycoprotein"
+    # https://www.ncbi.nlm.nih.gov/Structure/pdb/6VYB -- open state
+    # https://www.ncbi.nlm.nih.gov/Structure/pdb/6VXX -- closed state
+    # 1273 amino acids
+    #   S1  = 14-685
+    #   S2  = 686-1273
+    #   S2' = 816-1273
+    # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2750777/
+    self.spike_glycoprotein = translate(cc[21563-1:25384], True)
 
-# Forms homotetrameric potassium sensitive ion channels (viroporin) and may modulate virus release.
-corona['orf3a'] = translate(cc[25393-1:26220], True)
+    # Forms homotetrameric potassium sensitive ion channels (viroporin) and may modulate virus release.
+    self.orf3a =  translate(cc[25393-1:26220], True)
 
-# these two things stick out, used in assembly aka they package the virus
-corona['envelope_protein'] = translate(cc[26245-1:26472], True)  # also known as small membrane
-corona['membrane_glycoprotein'] = translate(cc[26523-1:27191], True)
+    # these two things stick out, used in assembly aka they package the virus
+    self.envelope_protein = translate(cc[26245-1:26472], True)  # also known as small membrane
+    self.membrane_glycoprotein = translate(cc[26523-1:27191], True)
+    self.orf6 = translate(cc[27202-1:27387], True)
+    self.orf7a = translate(cc[27394-1:27759], True)
+    self.orf7b = translate(cc[27756-1:27887], True)  # is this one real?
+    self.orf8 = translate(cc[27894-1:28259], True)
 
-corona['orf6'] = translate(cc[27202-1:27387], True)
+    # https://en.wikipedia.org/wiki/Capsid
+    # Packages the positive strand viral genome RNA into a helical ribonucleocapsid
+    # Includes the "internal" protein (from Coronavirus Pathogenesis)
+    # https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/human-coronavirus-oc43
+    self.nucleocapsid_phosphoprotein = translate(cc[28274-1:29533], True)
 
-corona['orf7a'] = translate(cc[27394-1:27759], True)
-corona['orf7b'] = translate(cc[27756-1:27887], True)  # is this one real?
+    # might be called the internal protein (Coronavirus Pathogenesis)
+    self.orf10 = translate(cc[29558-1:29674], True)
+    
+  def __del__(self):
+        print('Destructor called, coronaDNA object deleted.') 
 
-corona['orf8'] = translate(cc[27894-1:28259], True)
+# Instantiate a new instance of the corona DNA class
+coronaDNAIns = coronaDNA()
 
-# https://en.wikipedia.org/wiki/Capsid
-# Packages the positive strand viral genome RNA into a helical ribonucleocapsid
-# Includes the "internal" protein (from Coronavirus Pathogenesis)
-# https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/human-coronavirus-oc43
-corona['nucleocapsid_phosphoprotein'] = translate(cc[28274-1:29533], True)
-
-# might be called the internal protein (Coronavirus Pathogenesis)
-corona['orf10'] = translate(cc[29558-1:29674], True)
+# Then delete the instance
+del coronaDNAIns
 
