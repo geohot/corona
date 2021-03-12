@@ -38,6 +38,7 @@ for t in tt.split("\n"):
       print("dup", vv)
     dec[vv.strip()] = k
 
+# Class is used to wrap the DNA segements used in the translate function
 class DNA:
   def __init__(self):
     self.region = []
