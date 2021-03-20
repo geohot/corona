@@ -216,4 +216,3 @@ The [OpenMM](http://openmm.org/) toolkit is used for molecular simulation of pro
 
 
 
-### Design by contract changes to be made
