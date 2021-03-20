@@ -62,28 +62,74 @@ corona['orf1b'] = translate(cc[13468-1:21555], False).strip("*")  # chop off the
 #   S2  = 686-1273
 #   S2' = 816-1273
 # https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2750777/
-corona['spike_glycoprotein'] = translate(cc[21563-1:25384], True)
+# corona['spike_glycoprotein'] = translate(cc[21563-1:25384], True)
 
-# Forms homotetrameric potassium sensitive ion channels (viroporin) and may modulate virus release.
-corona['orf3a'] = translate(cc[25393-1:26220], True)
+# # Forms homotetrameric potassium sensitive ion channels (viroporin) and may modulate virus release.
+# corona['orf3a'] = translate(cc[25393-1:26220], True)
 
-# these two things stick out, used in assembly aka they package the virus
-corona['envelope_protein'] = translate(cc[26245-1:26472], True)  # also known as small membrane
-corona['membrane_glycoprotein'] = translate(cc[26523-1:27191], True)
+# # these two things stick out, used in assembly aka they package the virus
+# corona['envelope_protein'] = translate(cc[26245-1:26472], True)  # also known as small membrane
+# corona['membrane_glycoprotein'] = translate(cc[26523-1:27191], True)
 
-corona['orf6'] = translate(cc[27202-1:27387], True)
+# corona['orf6'] = translate(cc[27202-1:27387], True)
 
-corona['orf7a'] = translate(cc[27394-1:27759], True)
-corona['orf7b'] = translate(cc[27756-1:27887], True)  # is this one real?
+# corona['orf7a'] = translate(cc[27394-1:27759], True)
+# corona['orf7b'] = translate(cc[27756-1:27887], True)  # is this one real?
 
-corona['orf8'] = translate(cc[27894-1:28259], True)
+# corona['orf8'] = translate(cc[27894-1:28259], True)
 
-# https://en.wikipedia.org/wiki/Capsid
-# Packages the positive strand viral genome RNA into a helical ribonucleocapsid
-# Includes the "internal" protein (from Coronavirus Pathogenesis)
-# https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/human-coronavirus-oc43
-corona['nucleocapsid_phosphoprotein'] = translate(cc[28274-1:29533], True)
+# # https://en.wikipedia.org/wiki/Capsid
+# # Packages the positive strand viral genome RNA into a helical ribonucleocapsid
+# # Includes the "internal" protein (from Coronavirus Pathogenesis)
+# # https://www.sciencedirect.com/topics/veterinary-science-and-veterinary-medicine/human-coronavirus-oc43
+# corona['nucleocapsid_phosphoprotein'] = translate(cc[28274-1:29533], True)
 
-# might be called the internal protein (Coronavirus Pathogenesis)
-corona['orf10'] = translate(cc[29558-1:29674], True)
+# # might be called the internal protein (Coronavirus Pathogenesis)
+# corona['orf10'] = translate(cc[29558-1:29674], True)
+
+
+class rna_sequence:
+    def __init__(self, id, rna_sequence_range, is_protein):
+        self.id = id
+        self.rna_sequence_range = rna_sequence_range
+        self.is_protein = is_protein
+    #RNA sequence can be translated into amino acid sequence. So, each rna_sequence has its corresponding amino acid sequence.
+    def amino_acid_sequence(self):
+        return translate(self.rna_sequence_range, self.is_protein)
+
+
+
+#RNA sequences and their gene 'names' 
+untranslated_region = rna_sequence('untranslated_region', cc[0:265], False)
+orf1a = rna_sequence('orf1a', cc[266-1:13483], True)
+orf1b = rna_sequence('orf1b', cc[13468-1:21555], False)
+spike_glycoprotein = rna_sequence('spike_glycoprotein', cc[21563-1:25384], True)
+orf3a = rna_sequence ('orf3a', cc[25393-1:26220], True)
+envelope_protein = rna_sequence ('envelope_protein', cc[26245-1:26472], True)
+membrane_glycoprotein = rna_sequence('membrane_glycoprotein', cc[26523-1:27191], True) 
+orf6 = rna_sequence('orf6', cc[27202-1:27387], True)
+orf7a = rna_sequence ('orf7a', cc[27394-1:27759], True)
+orf7b = rna_sequence ('orf7b', cc[27756-1:27887], True)
+orf8 = rna_sequence ('orf8', cc[27894-1:28259], True)
+nucleocapsid_phosphoprotein = rna_sequence ('nucleocapsid_phosphoprotein', cc[28274-1:29533], True)
+orf10 = rna_sequence ('orf10', cc[29558-1:29674], True)
+
+#the corona array contains: an RNA sequence of the untranslated region and an amino acid sequence of rest of the genes
+corona['untranslated_region'] = untranslated_region.rna_sequence_range
+corona['orf1a'] = orf1a.amino_acid_sequence
+corona['orf1b'] = orf1b.amino_acid_sequence.strip("*")  # chop off the stop, note this doesn't have a start
+corona['spike_glycoprotein'] = spike_glycoprotein.amino_acid_sequence
+corona['orf3a'] = orf3a.amino_acid_sequence
+corona['envelope_protein'] = envelope_protein.amino_acid_sequence
+corona['membrane_glycoprotein'] = membrane_glycoprotein.amino_acid_sequence
+corona['orf6'] = orf6.amino_acid_sequence
+corona['orf7a'] = orf7a.amino_acid_sequence
+corona['orf7b'] = orf7b.amino_acid_sequence
+corona['orf8'] = orf8.amino_acid_sequence
+corona['nucleocapsid_phosphoprotein'] = nucleocapsid_phosphoprotein.amino_acid_sequence
+corona['orf10'] = orf10.amino_acid_sequence
+
+
+
+
 
