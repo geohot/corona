@@ -87,3 +87,120 @@ corona['nucleocapsid_phosphoprotein'] = translate(cc[28274-1:29533], True)
 # might be called the internal protein (Coronavirus Pathogenesis)
 corona['orf10'] = translate(cc[29558-1:29674], True)
 
+
+
+
+# The director which controls the construction process
+class Director:
+    __builder = None
+
+    def setBuilder(self, builder):
+        self.__builder = builder
+
+    def getOrganism(self):
+        organism = Organism()
+
+        # name of organism 
+        name = self.__builder.get_name()
+        organism.set_name(name)
+
+        # DNA sequence
+        dna_seq = self.__builder.get_dna_seq()
+        organism.set_dna_seq(dna_seq)
+
+        # RNA sequence 
+        rna_seq = self.__builder.get_rna_seq()
+        organism.set_rna_seq(rna_seq)
+
+        # Known Gene list
+        genes = self.__builder.getGenes()
+        organism.setGenes(genes)
+        
+        return organism
+
+# The whole organism
+class Organism: 
+    def __init__(self):
+        self.__name = None
+        self.__dna_seq = None
+        self.__rna_seq = None
+        self.__genes = None
+    
+    def set_name(self, name):
+        self.__name = name
+
+    def set_dna_seq(self,dna_seq):
+        self.__dna_se = dna_seq
+    
+    def set_rna_seq(self,rna_seq):
+        self.__rna_seq = rna_seq
+    
+    def setGenes(self, genes):
+        self.__genes = genes
+    
+    def specification(self):
+        print "organism name: %s" % self.__name.organismName
+        print "number of genes: %s" %self.__genes.len(geneNameSeq_tuple)
+        
+#    abstract interface builder
+class Builder:
+    def get_name(self): pass
+    def get_dna_seq(self): pass
+    def get_rna_seq(self): pass
+    def getGenes(self): pass
+
+
+
+# Organism parts
+class Name:
+    organismName = None
+class DNA_seq:
+    sequence = None
+class RNA_seq:
+    sequence = None
+class Genes:
+    geneNameList = list()
+    geneSeqList = list()
+    geneNameSeq_tuple = list(zip(geneNameList, geneSeqList))
+
+
+class coronaVirusBuilder(Builder):
+    # Concrete Builder implementation.
+    # Builds parts for an RNA only organism
+
+    def getName(self):
+        organismName = Name()
+        organismName.name = "COVID-19: strain 1"
+
+
+    def get_dna_seq(self):
+        dna_seq = DNA_seq()
+        dna_seq.sequence = None
+        return dna_seq
+
+    def get_rna_seq(self):
+        rna_seq = RNA_seq()
+        rna_seq.sequence = cc[0:29674]
+        return rna_seq
+    
+    def get_genes(self):
+        genes = Genes()
+        genes.geneNameList.extend('untranslated_region','orf1a','orf1b', 'spike_glycoprotein',
+        'orf3a','envelope_protein','membrane_glycoprotein', 'orf6', 'orf7a', 'orf7b', 'orf8',
+        'nucleocapsid_phosphoprotein', 'orf10')
+        genes.geneSeqList.extend(cc[0:265], cc[266-1:13483], cc[13468-1:21555], cc[21563-1:25384],
+        cc[25393-1:26220], cc[26245-1:26472], cc[26523-1:27191], cc[27202-1:27387], cc[27394-1:27759],
+        cc[27756-1:27887], cc[27894-1:28259], cc[28274-1:29533], cc[29558-1:29674])
+        return genes
+
+# construct a corona virus object containing: the name of the organism,
+# the entire RNA sequence, and a tuple-list of the names of genes and corresponding RNA sequence 
+def main():
+    covidBuilder = coronaVirusBuilder()
+
+    director = Director()
+
+    # Build covid19
+    director.setBuilder(covidBuilder)
+    covid = director.getOrganism()
+    covid.specification()
