@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-from lib import cc as virus
+from lib import genome as virus
 from vaccine.load import dat as vaccine
 from corona import corona
 
-virus = virus.replace("T", "U")
+virus = virus.get_nucleotides().replace("T", "U")
 vaccine = vaccine.replace("Ψ", "U")
 
 """
@@ -21,4 +21,3 @@ vvirus = virus[21508:21508+len(vaccine)]
 
 print(vvirus)
 print(vaccine)
-
