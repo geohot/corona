@@ -1,5 +1,5 @@
 import random
-
+#New line have been added 
 # Asn or Asp / B  AAU, AAC; GAU, GAC
 # Gln or Glu / Z  CAA, CAG; GAA, GAG
 # START AUG
