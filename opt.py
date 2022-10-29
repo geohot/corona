@@ -21,4 +21,5 @@ vvirus = virus[21508:21508+len(vaccine)]
 
 print(vvirus)
 print(vaccine)
+ghfhfgh
 
