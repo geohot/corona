@@ -4,7 +4,7 @@ import random
 # Gln or Glu / Z  CAA, CAG; GAA, GAG
 # START AUG
 tt = """Ala / A GCU, GCC, GCA, GCG
-Ile / I AUU, AUC, AUA
+Ile / I AUU, AUC, AUA, GCC 
 Arg / R CGU, CGC, CGA, CGG; AGA, AGG
 Leu / L CUU, CUC, CUA, CUG; UUA, UUG
 Asn / N AAU, AAC
