@@ -3,10 +3,14 @@ from lib import cc as virus
 from vaccine.load import dat as vaccine
 from corona import corona
 
+# Replace thymine (T) with uracil (U) in virus sequence
 virus = virus.replace("T", "U")
+
+# Replace pseudouridine (Ψ) with uracil (U) in vaccine sequence
 vaccine = vaccine.replace("Ψ", "U")
 
 """
+# Find the start position of the vaccine sequence in the virus sequence
 for i in range(len(virus)-len(vaccine)):
   mm = virus[i:i+len(vaccine)]
   mr = sum([c1 == c2 for c1,c2 in zip(mm, vaccine)]) / len(vaccine)
