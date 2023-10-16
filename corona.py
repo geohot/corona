@@ -91,3 +91,4 @@ corona['orf10'] = translate(cc[29558-1:29674], True)
 
 
 #alright here we added the best idea that we thought locally!
+#awasdfasdfashfjcahsdjkchasdjkchasdhcvasdjhkcvasjkdcvhasdjkcvasdcjkvasdhcsadcasjhdcjhas
